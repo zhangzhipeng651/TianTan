@@ -31,7 +31,7 @@
     <string name="name">名称</string>
     <string name="description">描述</string>
     <string name="nosettingsavailable">暂无设置可用</string>
-    <string name="needhelpwithpartners">此功能需要小组成员的参与，方可完成！</string>
+    <string name="needhelpwithpartners">该功能尚未实现。</string>
     <string name="version">版本</string>
     <string name="author_info">吴江中学高一（1）班天文小组</string>
     <string name="testing_edition">测试版本</string>

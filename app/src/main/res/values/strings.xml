@@ -42,7 +42,7 @@
     <string name="name">Name</string>
     <string name="description">Description</string>
     <string name="nosettingsavailable">No settings available currently.</string>
-    <string name="needhelpwithpartners">This function requires the partners\' help.</string>
+    <string name="needhelpwithpartners">该功能尚未实现。</string>
     <string name="version">Version</string>
     <string name="author_info">Astronomy Group, Class 1 Senior 1, Wujiang High School</string>
     <string name="copyright_description" translatable="false">版权所有 \u00a9 2022 吴江中学高一（1）班天文小组\n
