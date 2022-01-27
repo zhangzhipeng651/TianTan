@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ TianTan (天探)
+  ~ Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+    <string name="app_name">天探</string>
+    <string name="settings">设置</string>
+    <string name="about">关于</string>
+    <string name="under_construction">此功能正在开发中，敬请期待！</string>
+    <string name="app_full_name">天探——天体探索者</string>
+    <string name="license">许可证</string>
+    <string name="contributors">贡献者</string>
+    <string name="author">作者</string>
+    <string name="thanks">鸣谢</string>
+    <string name="title_activity_settings">设置</string>
+    <string name="name">名称</string>
+    <string name="description">描述</string>
+    <string name="nosettingsavailable">暂无设置可用</string>
+    <string name="needhelpwithpartners">此功能需要小组成员的参与，方可完成！</string>
+    <string name="version">版本</string>
+    <string name="author_info">吴江中学高一（1）班天文小组</string>
+    <string name="testing_edition">测试版本</string>
+    <string name="methods_to_express_angle">表示角度的方法</string>
+
+    <string-array name="angle_s_entry">
+        <item name="deg">角度制</item>
+        <item name="rad">弧度制</item>
+    </string-array>
+</resources>

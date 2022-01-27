@@ -1,0 +1,67 @@
+<!--
+  ~ TianTan (天探)
+  ~ Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<PreferenceScreen
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+
+    <!--PreferenceCategory
+            app:title="@string/messages_header">
+
+        <EditTextPreference
+                app:key="signature"
+                app:title="@string/signature_title"
+                app:useSimpleSummaryProvider="true"/>
+
+        <ListPreference
+                app:key="reply"
+                app:title="@string/reply_title"
+                app:entries="@array/reply_entries"
+                app:entryValues="@array/reply_values"
+                app:defaultValue="reply"
+                app:useSimpleSummaryProvider="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            app:title="@string/sync_header">
+
+        <SwitchPreferenceCompat
+                app:key="sync"
+                app:title="@string/sync_title"/>
+
+        <SwitchPreferenceCompat
+                app:key="attachment"
+                app:title="@string/attachment_title"
+                app:summaryOn="@string/attachment_summary_on"
+                app:summaryOff="@string/attachment_summary_off"
+                app:dependency="sync"/>
+
+    </PreferenceCategory-->
+    <ListPreference
+            app:key="angle"
+            app:title="@string/methods_to_express_angle"
+            app:entries="@array/angle_s_entry"
+            app:entryValues="@array/angle_s_values"
+            app:defaultValue="0"
+            app:useSimpleSummaryProvider="true"
+    >
+
+    </ListPreference>
+
+</PreferenceScreen>
