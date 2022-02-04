@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ TianTan (天探)
   ~ Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
   ~
@@ -17,26 +16,7 @@
   ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <item
-            android:id="@+id/menu_settings"
-            app:showAsAction="always"
-            android:title="@string/settings"
-            android:icon="?android:attr/actionModeWebSearchDrawable"
-    />
-    <item
-            android:id="@+id/menu_about"
-            app:showAsAction="always"
-            android:title="@string/about"
-            android:icon="@android:drawable/ic_menu_info_details"
-    />
-    <item
-        android:id="@+id/menu_exit"
-        app:showAsAction="always"
-        android:title="@string/exit"
-        android:icon="@android:drawable/ic_menu_close_clear_cancel"
-        />
-
-</menu>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <size android:height="2px"/>
+    <solid android:color="#15000000"/>
+</shape>

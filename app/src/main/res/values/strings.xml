@@ -1,5 +1,4 @@
-
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ TianTan (天探)
   ~ Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
   ~
@@ -21,7 +20,6 @@
     <string name="app_name">TianTan</string>
     <string name="settings">Settings</string>
     <string name="about">About</string>
-    <string name="under_construction">This function is under construction. Please wait.</string>
     <string name="app_full_name">TianTan -- Astronomy Explorer</string>
     <string name="license">License</string>
     <string name="contributors">Contributors</string>
@@ -37,19 +35,16 @@
 
     <string-array name="mainpagelistcell_description">
         <item>介绍太阳系内各天体</item>
-        <item>随机抽取若干道选择题，请认真作答</item>
+        <item>随机抽取五道选择题，请认真作答</item>
     </string-array>
     <string name="name">Name</string>
     <string name="description">Description</string>
-    <string name="nosettingsavailable">No settings available currently.</string>
     <string name="needhelpwithpartners">该功能尚未实现。</string>
     <string name="version">Version</string>
     <string name="author_info">Astronomy Group, Class 1 Senior 1, Wujiang High School</string>
-    <string name="copyright_description" translatable="false">版权所有 \u00a9 2022 吴江中学高一（1）班天文小组\n
-        <!--本软件是在GNU通用公共许可证（第3版）下发布的开源软件。-->
-    </string>
+    <string name="copyright_description">Copyright \u00a9 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School.</string>
     <string name="gplv3_description" translatable="false">本软件是在GNU通用公共许可证（第3版）下发布的开源软件。</string>
-    <string name="thanks_description" translatable="false">感谢吴同学为本APP题字！</string>
+    <string name="thanks_description" translatable="false">感谢吴同学为本软件题字！</string>
     <string name="testing_edition">Testing Edition</string>
     <string name="methods_to_express_angle">Method to express angle</string>
 
@@ -62,4 +57,21 @@
         <item>0</item>
         <item>1</item>
     </string-array>
+
+    <string-array name="grades">
+        <item>Not so good.</item>
+        <item>Just so so.</item>
+        <item>Good.</item>
+        <item>Great!</item>
+        <item>Perfect!</item>
+    </string-array>
+    <string name="title_activity_score">Score Result</string>
+    <string name="share">Share</string>
+    <string name="return_">Return</string>
+    <string name="exit">Exit</string>
+    <string name="confirm_exit">Are you sure to exit?</string>
+    <string name="okay">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
+
 </resources>

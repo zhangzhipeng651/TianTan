@@ -16,48 +16,51 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package team.lightcloud.tiantan;
+package team.lightcloud.tiantan.contest;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class About extends AppCompatActivity {
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import team.lightcloud.tiantan.R;
+
+public class ScoreActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
-        setTitle(R.string.about);
+        setContentView(R.layout.activity_score);
+        setTitle(R.string.title_activity_score);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-        //添加详细信息
-        TextView tv = findViewById(R.id.aboutpage_detailinfo);
-        StringBuilder sb = new StringBuilder();
-        sb.append(getString(R.string.version));
-        sb.append(": ");
-        sb.append(BuildConfig.VERSION_NAME);
 
-        if (Util.isDebugRelease()) {
-            sb.append("-");
-            sb.append(getString(R.string.testing_edition));
-        }
+        LinearLayout star_ctner = (LinearLayout) findViewById(R.id.grade_stars_ctner);
 
-        sb.append('\n');
-        sb.append(getString(R.string.author));
-        sb.append(": ");
-        sb.append(getString(R.string.author_info));
-        sb.append("\n\n");
-        sb.append(getString(R.string.copyright_description));
-        sb.append(getString(R.string.gplv3_description));
-        sb.append("\n\n");
-        sb.append(getString(R.string.thanks_description));
-        tv.setText(sb.toString());
+        Button button_return = (Button) findViewById(R.id.score_return);
+        Button button_share = (Button) findViewById(R.id.score_share);
+        button_return.setOnClickListener(l -> {
+            this.finish();
+        });
+        button_share.setOnClickListener(l -> {
+            Toast.makeText(this, R.string.needhelpwithpartners, Toast.LENGTH_SHORT).show();
+            View starImage =  LayoutInflater.from(this).inflate(R.layout.star,null);
+            star_ctner.addView(starImage);
+        });
+
+        View starImage = LayoutInflater.from(this).inflate(R.layout.star,null);
+        star_ctner.addView(starImage);
+
     }
 
     @Override

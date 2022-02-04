@@ -18,28 +18,18 @@
 
 package team.lightcloud.tiantan;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class MainPageListCell {
-    public String name; //名称
-    public String description;  //描述
-
-    public static String[] nameArray = {"天体介绍", "答题竞赛",};
-    public static String[] descriptionArray = {"介绍太阳系内各天体", "随机抽取若干道选择题，请认真作答",};
-
-    public MainPageListCell(String name, String description) {
-        this.name = name;
-        this.description = description;
+public class Util {
+    private Util(){}
+    private static boolean nIsDebugRelease=false;
+    public static boolean isDebugRelease(){
+        return nIsDebugRelease;
     }
 
-    public static List<MainPageListCell> getDefaultList() {
-        List<MainPageListCell> planetList = new ArrayList<>();
-        for (int i = 0; i < nameArray.length; i++) {
-            planetList.add(new MainPageListCell(nameArray[i], descriptionArray[i]));
-        }
-        return planetList;
+    static {
+        if (BuildConfig.BUILD_TYPE.equals("debug"))
+            nIsDebugRelease = true;
+        else
+            nIsDebugRelease = false;
     }
-
 
 }

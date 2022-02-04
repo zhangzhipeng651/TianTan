@@ -11,7 +11,7 @@
 
 ~~您可以点击本页旁边的 Releases 选择最新版本并下载。~~
 
-**注意：目前，本软件仅将在本 Github 页面发布。作者从未打算将此软件上架商店。**
+**注意：目前，本软件仅将在本 GitHub 页面发布。作者从未打算将此软件上架商店。**
 
 如果应用商店等其它渠道中出现本软件，请不要下载。安全起见，请到本页面~~下载~~。
 
@@ -51,6 +51,6 @@
  或 Android Studio ([点击此处下载](https://developer.android.google.cn/studio))
 * JDK 11 或更高版本
 
-##鸣谢
+## 鸣谢
 * 高一（1）班吴同学（应他的要求，名字保密）为本软件题字。
 * 本 README.md 文档在编写过程中参考了 [HMCL 启动器源代码的 README.md](https://github.com/huanghongxun/HMCL/blob/javafx/README.md) 文档。向该文档的作者表示感谢！

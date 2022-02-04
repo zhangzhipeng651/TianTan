@@ -18,6 +18,8 @@
 
 package team.lightcloud.tiantan;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -34,12 +36,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        try {
-            if (BuildConfig.BUILD_TYPE.equals("debug"))
-                Thread.sleep(500);     //为了能够看清启动界面
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            if (BuildConfig.BUILD_TYPE.equals("debug"))
+//                Thread.sleep(500);     //为了能够看清启动界面
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         super.onCreate(savedInstanceState);
         setTheme(R.style.Theme_TianTan);
         setContentView(R.layout.activity_main);
@@ -70,12 +72,16 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_settings:
                 startActivity(new Intent(this, SettingsActivity.class));
                 break;
+            case R.id.menu_exit:
+                this.finish();
+                break;
             default:
-                Toast.makeText(this, R.string.under_construction, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.needhelpwithpartners, Toast.LENGTH_SHORT).show();
                 break;
 
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 }

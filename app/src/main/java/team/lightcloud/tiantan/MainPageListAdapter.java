@@ -19,6 +19,7 @@
 package team.lightcloud.tiantan;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
+
+import team.lightcloud.tiantan.contest.ContestActivity;
+import team.lightcloud.tiantan.contest.ScoreActivity;
 
 public class MainPageListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener {
 
@@ -76,7 +80,15 @@ public class MainPageListAdapter extends BaseAdapter implements AdapterView.OnIt
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(mContext, R.string.needhelpwithpartners, Toast.LENGTH_SHORT).show();
+        switch (position) {
+            case 1:
+                Intent intent = new Intent(mContext, ContestActivity.class);
+                mContext.startActivity(intent);
+                break;
+            default:
+                Toast.makeText(mContext, R.string.needhelpwithpartners, Toast.LENGTH_SHORT).show();
+                break;
+        }
 
     }
 
