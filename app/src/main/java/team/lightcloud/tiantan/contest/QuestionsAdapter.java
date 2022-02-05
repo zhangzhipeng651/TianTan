@@ -82,6 +82,30 @@ public class QuestionsAdapter {
         return c;
     }
 
+    public String[] getQuestionTitleArray(){
+        List<String> qta = new ArrayList<>();
+        for(Question q:mqList){
+            qta.add(q.getTitle());
+        }
+        return qta.toArray(new String[qta.size()]);
+    }
+
+    public String[] getCorrectAnswerArray(){
+        List<String> qca = new ArrayList<>();
+        for(Question q:mqList){
+            qca.add(q.getCorrectAnswer());
+        }
+        return qca.toArray(new String[qca.size()]);
+    }
+
+    public String[] getSelectedStringArray(){   //此方法返回用户选中选项的字符串集合，若用户某选项未选中则该选项为""
+        ArrayList<String> stringArray= new ArrayList<>();
+        for(ViewHolder vh:mVHList){
+            stringArray.add(vh.getSelectedString());
+        }
+        return stringArray.toArray(new String[stringArray.size()]);
+    }
+
     public boolean checkMissingSelections(){     //此方法用来检查用户是否漏做题目，当有漏做时，返回true，否则返回false
         for (ViewHolder vh : mVHList){
             if(vh.getSelectedString().equals(""))
@@ -89,6 +113,12 @@ public class QuestionsAdapter {
         }
         return false;
     }
+
+    public List<Question> getQuestionList(){    //此方法用来返回问题列表
+        return mqList;
+    }
+
+
 
     public final class ViewHolder {
         public TextView title;

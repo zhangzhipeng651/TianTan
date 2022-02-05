@@ -59,11 +59,12 @@
     </string-array>
 
     <string-array name="grades">
+        <item>Not good.</item>
         <item>Not so good.</item>
         <item>Just so so.</item>
         <item>Good.</item>
         <item>Great!</item>
-        <item>Perfect!</item>
+        <item>Excellent!</item>
     </string-array>
     <string name="title_activity_score">Score Result</string>
     <string name="share">Share</string>
@@ -73,5 +74,6 @@
     <string name="okay">OK</string>
     <string name="cancel">Cancel</string>
     <string name="submit">Submit</string>
+    <string name="share_to">Share to</string>
 
 </resources>

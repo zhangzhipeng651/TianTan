@@ -68,6 +68,7 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="10dp"
             android:text="@string/submit"
+            android:textSize="8pt"
             android:drawableLeft="@drawable/abc_vector_test"
             android:scaleX="-1"
             android:textScaleX="-1"

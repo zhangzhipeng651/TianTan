@@ -25,8 +25,8 @@ public class MainPageListCell {
     public String name; //名称
     public String description;  //描述
 
-    public static String[] nameArray = {"天体介绍", "答题竞赛",};
-    public static String[] descriptionArray = {"介绍太阳系内各天体", "随机抽取若干道选择题，请认真作答",};
+    public static String[] nameArray = {"天体介绍", "回答问题",};
+    public static String[] descriptionArray = {"介绍太阳系内各天体", "随机抽取五道选择题",};
 
     public MainPageListCell(String name, String description) {
         this.name = name;

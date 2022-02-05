@@ -43,11 +43,12 @@
     </string-array>
 
     <string-array name="grades">
+        <item>很不好</item>
         <item>不够好</item>
         <item>一般般</item>
         <item>还可以</item>
         <item>很不错</item>
-        <item>完美</item>
+        <item>棒！</item>
     </string-array>
     <string name="title_activity_score">得分结果</string>
     <string name="share">分享</string>
@@ -57,4 +58,5 @@
     <string name="okay">确定</string>
     <string name="cancel">取消</string>
     <string name="submit">提交</string>
+    <string name="share_to">分享到</string>
 </resources>

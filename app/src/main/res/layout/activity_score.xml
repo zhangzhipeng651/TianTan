@@ -18,73 +18,108 @@
   -->
 
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".contest.ScoreActivity">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".contest.ScoreActivity">
 
-    <TextView
-        android:id="@+id/grade_text_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:text="Grade"
-        android:textColor="#000000"
-        android:textSize="28dp"
-        android:textStyle="bold" />
+	<TextView
+		android:id="@+id/grade_text_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="65dp"
+		android:gravity="center"
+		android:orientation="horizontal"
+		android:text="Grade"
+		android:textColor="#000000"
+		android:textSize="28dp"
+		android:textStyle="bold" />
 
-    <LinearLayout
-        android:id="@+id/grade_stars_ctner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/grade_text_title"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
-        >
+	<LinearLayout
+		android:id="@+id/grade_stars_ctner"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/grade_text_title"
+		android:layout_centerHorizontal="true"
 
-    </LinearLayout>
+		android:orientation="horizontal"
+		>
 
-    <ProgressBar
-        android:id="@+id/score_dividing"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/grade_stars_ctner"
-        android:layout_centerHorizontal="true"
-        android:indeterminate="true"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/score_dividing"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
+	</LinearLayout>
 
-        >
-        <Button
-            android:id="@+id/score_share"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:layout_marginRight="4dp"
-            android:layout_marginLeft="10dp"
-            android:text="@string/share"
-            android:drawableLeft="@android:drawable/ic_menu_share"
-            />
-        <Button
-            android:id="@+id/score_return"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/return_"
-            android:drawableLeft="@android:drawable/ic_menu_revert"
-            />
-    </LinearLayout>
+	<TextView
+		android:id="@+id/score_text_time"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/grade_stars_ctner"
+		android:layout_centerHorizontal="true"
+		android:paddingBottom="25pt"
+		android:text="Time" />
+
+	<ImageView
+		android:id="@+id/score_page_divider"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/score_text_time"
+		android:src="@drawable/divider"
+		/>
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@+id/score_button_ctner"
+		android:layout_below="@+id/score_page_divider">
+
+		<TextView
+			android:id="@+id/score_text_detail"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="3.5pt"
+			android:text="Detailed Information"
+			android:textColor="@color/black" />
+	</ScrollView>
+
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_above="@+id/score_button_ctner"
+		android:src="@drawable/divider"
+		/>
+
+	<LinearLayout
+		android:id="@+id/score_button_ctner"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:orientation="horizontal"
+
+		>
+		<Button
+			android:id="@+id/score_share"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="0.5"
+			android:layout_marginRight="4dp"
+			android:layout_marginLeft="10dp"
+			android:text="@string/share"
+			android:textSize="8.5pt"
+			android:drawableLeft="@android:drawable/ic_menu_share"
+			/>
+		<Button
+			android:id="@+id/score_return"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="0.5"
+			android:layout_marginLeft="4dp"
+			android:layout_marginRight="10dp"
+			android:text="@string/return_"
+			android:textSize="8.5pt"
+			android:drawableLeft="@android:drawable/ic_menu_revert"
+			/>
+	</LinearLayout>
+
+
 </RelativeLayout>

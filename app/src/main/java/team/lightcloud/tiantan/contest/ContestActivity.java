@@ -24,7 +24,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -40,6 +43,7 @@ import team.lightcloud.tiantan.Util;
 public class ContestActivity extends AppCompatActivity {
 
 	private QuestionsAdapter adapter;
+	private long startTime;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -73,19 +77,27 @@ public class ContestActivity extends AppCompatActivity {
 				showResult();
 			}
 		});
-
-
-
+		startTime = System.currentTimeMillis();
 	}
 
 	private void showResult(){
 		int c = adapter.getCorrectSelectionCount();
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage("您答对了" + c + "题！");
-		builder.setPositiveButton(R.string.okay, (a,b) -> this.finish());
-		builder.setOnCancelListener(l -> this.finish());
-		builder.create().show();
-		//this.finish();
+		String[] qt = adapter.getQuestionTitleArray();
+		String[] qc = adapter.getCorrectAnswerArray();
+		String[] ca = adapter.getSelectedStringArray();
+		long time = System.currentTimeMillis() - startTime;
+
+		Intent intent = new Intent(this, ScoreActivity.class);
+		Bundle bundle = new Bundle();
+
+		bundle.putInt("score", c);
+		bundle.putLong("time", time);   //存放用户做题时间，单位为毫秒
+		bundle.putStringArray("title", qt); //存放各题标题
+		bundle.putStringArray("select", ca); //存放用户选择选项
+		bundle.putStringArray("correct", qc); //存放各项正确选项
+		intent.putExtras(bundle);
+		startActivity(intent);
+		this.finish();
 	}
 
 	@Override
