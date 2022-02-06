@@ -73,16 +73,21 @@ public class MainPageListAdapter extends BaseAdapter implements AdapterView.OnIt
         MainPageListCell cell = mList.get(position);
         holder.name.setText(cell.name);
         holder.description.setText(cell.description);
-        holder.name.requestFocus();//..........................................
+        holder.name.requestFocus();
         return convertView;
 
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent;
         switch (position) {
+            case 0:
+                intent = new Intent(mContext, IntroActivity.class);
+                mContext.startActivity(intent);
+                break;
             case 1:
-                Intent intent = new Intent(mContext, ContestActivity.class);
+                intent = new Intent(mContext, ContestActivity.class);
                 mContext.startActivity(intent);
                 break;
             default:

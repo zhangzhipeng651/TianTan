@@ -42,9 +42,9 @@
     <string name="needhelpwithpartners">该功能尚未实现。</string>
     <string name="version">Version</string>
     <string name="author_info">Astronomy Group, Class 1 Senior 1, Wujiang High School</string>
-    <string name="copyright_description">Copyright \u00a9 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School.</string>
-    <string name="gplv3_description" translatable="false">本软件是在GNU通用公共许可证（第3版）下发布的开源软件。</string>
-    <string name="thanks_description" translatable="false">感谢吴同学为本软件题字！</string>
+    <string name="copyright_description">Copyright \u00a9 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School.\n</string>
+    <string name="gplv3_description">TianTan is open source software released under the GNU General Public License version 3.</string>
+    <string name="worker_description">Title writing: Classmate Wu (Not a member of our group)\nMaterials collecting: Huang Hanqing, Liu Chenjie\nProgramming：Zhang Zhipeng</string>
     <string name="testing_edition">Testing Edition</string>
     <string name="methods_to_express_angle">Method to express angle</string>
 
@@ -75,5 +75,8 @@
     <string name="cancel">Cancel</string>
     <string name="submit">Submit</string>
     <string name="share_to">Share to</string>
+    <string name="encounter_unknown_problem">Sorry, the program has encounted an unknown problem.</string>
+    <string name="titile_intro">Introduction</string>
+    <string name="no_settings_available">No settings available</string>
 
 </resources>

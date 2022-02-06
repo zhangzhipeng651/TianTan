@@ -54,7 +54,7 @@
                 app:dependency="sync"/>
 
     </PreferenceCategory-->
-    <ListPreference
+    <!--ListPreference
             app:key="angle"
             app:title="@string/methods_to_express_angle"
             app:entries="@array/angle_s_entry"
@@ -63,6 +63,9 @@
             app:useSimpleSummaryProvider="true"
     >
 
-    </ListPreference>
+    </ListPreference-->
+    <Preference
+        app:title="@string/no_settings_available"
+        />
 
 </PreferenceScreen>

@@ -129,6 +129,8 @@ public class Util {
 
 			String path = saveFile.toURI().toString();
 			Uri uri = Uri.parse(path);
+
+			// 为了与 Android 7 和更高版本兼容，使用FileProvider
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
 				uri = FileProvider.getUriForFile(mContext, "team.lightcloud.tiantan", saveFile);
 			}

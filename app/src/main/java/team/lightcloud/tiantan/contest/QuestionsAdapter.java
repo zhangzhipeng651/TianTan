@@ -118,8 +118,6 @@ public class QuestionsAdapter {
         return mqList;
     }
 
-
-
     public final class ViewHolder {
         public TextView title;
         public RadioGroup selGroup;

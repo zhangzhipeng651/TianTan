@@ -64,20 +64,19 @@ public class ScoreActivity extends AppCompatActivity {
 			this.finish();
 		});
 		button_share.setOnClickListener(l -> {
-			try {
-				//Toast.makeText(this, R.string.needhelpwithpartners, Toast.LENGTH_SHORT).show();
+//			try {
 				Intent intent = new Intent();
 				intent.setAction(Intent.ACTION_SEND);
 				intent.setType("image/png");
 				Bitmap screenShot = Util.activityShot(this);
-				//Uri uri = Uri.parse(MediaStore.Images.Media.insertImage(getContentResolver(), screenShot, null,null));
 				Uri uri = Util.saveBitmapAndReturnURI(System.currentTimeMillis() + ".png", screenShot, this);
+				if(uri == null){Toast.makeText(this, R.string.encounter_unknown_problem, Toast.LENGTH_SHORT);}
 				intent.putExtra(Intent.EXTRA_STREAM, uri);
 				intent = Intent.createChooser(intent, getString(R.string.share_to));
 				startActivity(intent);
-			}catch(Exception e){
-				e.printStackTrace();
-			}
+//			}catch(Exception e){
+//				e.printStackTrace();
+//			}
 		});
 
 //      View starImage = LayoutInflater.from(this).inflate(R.layout.star,null);
@@ -104,8 +103,6 @@ public class ScoreActivity extends AppCompatActivity {
 		String[] select = getIntent().getExtras().getStringArray("select");
 		String[] correct = getIntent().getExtras().getStringArray("correct");
 
-//		Log.e(null,"Start adding detailed information.");
-
 		TextView tv = findViewById(R.id.score_text_detail);
 		int c = title.length;
 		StringBuilder sb = new StringBuilder();
@@ -129,7 +126,6 @@ public class ScoreActivity extends AppCompatActivity {
 			sb.append("\n\n");
 		}
 		tv.setText(sb.toString());
-
 	}
 
 	@Override
@@ -151,6 +147,4 @@ public class ScoreActivity extends AppCompatActivity {
 		Log.i(null, "Starting deleting temporary data");
 		Util.cleanImage(this);
 	}
-
-
 }

@@ -1,0 +1,48 @@
+body
+{
+	background-color:#060f38;
+	color:white;
+	
+}
+h1,h2,h3{
+	margin-left: 1.5cm;
+}
+h4,h5,h6{
+	text-align: center;
+}
+ul{
+	margin: 0.5cm;
+}
+li{
+	font-size: large;
+	margin-bottom: 0.5cm;
+}
+a{
+	color:white;
+    text-decoration: none;
+}
+button{
+    background-color: #060f38;
+    color:white;
+    font-size: medium;
+}
+
+.rimg{
+	max-width: 35vw;
+}
+p{
+    text-indent: 2em;
+    margin-left: 0.6cm;
+    margin-right: 0.6cm;
+}
+.picdiv{
+	float: right; 
+	margin-left: 3mm; 
+	margin-right: 3mm; 
+	margin-bottom: 3mm;
+	
+}
+
+table{
+	text-align:center;
+}

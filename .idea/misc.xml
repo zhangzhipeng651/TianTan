@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/IdeaProjects/TianTan/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2765" />
         <entry key="..\:/IdeaProjects/TianTan/app/src/main/res/drawable/divider.xml" value="0.4745" />
         <entry key="..\:/IdeaProjects/TianTan/app/src/main/res/layout/activity_contest.xml" value="0.5" />
+        <entry key="..\:/IdeaProjects/TianTan/app/src/main/res/layout/activity_intro.xml" value="0.4197916666666667" />
         <entry key="..\:/IdeaProjects/TianTan/app/src/main/res/layout/activity_main.xml" value="0.309375" />
         <entry key="..\:/IdeaProjects/TianTan/app/src/main/res/layout/activity_score.xml" value="0.5" />
         <entry key="..\:/IdeaProjects/TianTan/app/src/main/res/layout/emptystar.xml" value="0.5484375" />
