@@ -25,4 +25,6 @@
 	android:layout_height="match_parent"
 	tools:context=".IntroActivity"
 	android:id="@+id/intro_webview"
+	android:background="#060f38"
+
 	/>

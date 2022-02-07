@@ -25,51 +25,54 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class About extends AppCompatActivity {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_about);
+		setTitle(R.string.about);
+		ActionBar actionBar = getSupportActionBar();
+		if (actionBar != null) {
+			actionBar.setHomeButtonEnabled(true);
+			actionBar.setDisplayHomeAsUpEnabled(true);
+		}
+		//添加详细信息
+		TextView tv = findViewById(R.id.aboutpage_detailinfo);
+		StringBuilder sb = new StringBuilder();
+		sb.append(getString(R.string.version));
+		sb.append(": ");
+		sb.append(BuildConfig.VERSION_NAME);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
-        setTitle(R.string.about);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setHomeButtonEnabled(true);
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-        //添加详细信息
-        TextView tv = findViewById(R.id.aboutpage_detailinfo);
-        StringBuilder sb = new StringBuilder();
-        sb.append(getString(R.string.version));
-        sb.append(": ");
-        sb.append(BuildConfig.VERSION_NAME);
+		sb.append("-");
+		sb.append(getResources().getStringArray(R.array.version_state_description)[Util.releaseVersion]);
 
-        if (Util.isDebugRelease()) {
-            sb.append("-");
-            sb.append(getString(R.string.testing_edition));
-        }
+		if (Util.isDebugRelease()) {
+			sb.append("-");
+			sb.append(getString(R.string.testing_edition));
+		}
 
-        sb.append('\n');
-        sb.append(getString(R.string.author));
-        sb.append(": ");
-        sb.append(getString(R.string.author_info));
-        sb.append("\n\n");
-        sb.append(getString(R.string.copyright_description));
-        sb.append(getString(R.string.gplv3_description));
-        sb.append("\n\n");
-        sb.append(getString(R.string.worker_description));
-        tv.setText(sb.toString());
-    }
+		sb.append('\n');
+		sb.append(getString(R.string.author));
+		sb.append(": ");
+		sb.append(getString(R.string.author_info));
+		sb.append("\n\n");
+		sb.append(getString(R.string.copyright_description));
+		sb.append(getString(R.string.gplv3_description));
+		sb.append("\n\n");
+		sb.append(getString(R.string.open_source_link));
+		sb.append("\n\n");
+		sb.append(getString(R.string.worker_description));
+		tv.setText(sb.toString());
+	}
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        switch (id) {
-            case android.R.id.home:
-                this.finish();
-            default:
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int id = item.getItemId();
+		switch (id) {
+			case android.R.id.home:
+				this.finish();
+			default:
+				break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 }

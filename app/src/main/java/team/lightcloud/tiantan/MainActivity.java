@@ -18,15 +18,17 @@
 
 package team.lightcloud.tiantan;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import java.util.List;
 
@@ -36,12 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        try {
-//            if (BuildConfig.BUILD_TYPE.equals("debug"))
-//                Thread.sleep(500);     //为了能够看清启动界面
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
         super.onCreate(savedInstanceState);
         setTheme(R.style.Theme_TianTan);
         setContentView(R.layout.activity_main);
@@ -52,6 +48,30 @@ public class MainActivity extends AppCompatActivity {
         lv = findViewById(R.id.listview);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(adapter);
+
+        SharedPreferences shared = getSharedPreferences("share", MODE_PRIVATE);
+        int lastVersionState = shared.getInt("versionstate", -1);
+        if(Util.releaseVersion == 0) {
+            shared.edit().putInt("versionstate",Util.releaseVersion);
+            return;
+        }
+        if(Util.releaseVersion != lastVersionState){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(R.string.welcome);
+            StringBuilder sb = new StringBuilder();
+            String[] sa = getResources().getStringArray(R.array.version_description);
+            sb.append(sa[sa.length - 1]);
+            if(Util.releaseVersion != 3){
+                sb.append("\n");
+                sb.append(sa[Util.releaseVersion]);
+            }
+            builder.setMessage(sb.toString());
+            builder.setPositiveButton(R.string.okay,null);
+            builder.show();
+            SharedPreferences.Editor editor = shared.edit();
+            editor.putInt("versionstate", Util.releaseVersion);
+            editor.commit();
+        }
 
     }
 
@@ -76,11 +96,9 @@ public class MainActivity extends AppCompatActivity {
                 this.finish();
                 break;
             default:
-                Toast.makeText(this, R.string.needhelpwithpartners, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.notrealized, Toast.LENGTH_SHORT).show();
                 break;
-
         }
-
         return super.onOptionsItemSelected(item);
     }
 

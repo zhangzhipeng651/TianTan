@@ -31,7 +31,6 @@ import android.widget.Toast;
 import java.util.List;
 
 import team.lightcloud.tiantan.contest.ContestActivity;
-import team.lightcloud.tiantan.contest.ScoreActivity;
 
 public class MainPageListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener {
 
@@ -91,7 +90,7 @@ public class MainPageListAdapter extends BaseAdapter implements AdapterView.OnIt
                 mContext.startActivity(intent);
                 break;
             default:
-                Toast.makeText(mContext, R.string.needhelpwithpartners, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, R.string.notrealized, Toast.LENGTH_SHORT).show();
                 break;
         }
 

@@ -38,7 +38,15 @@ import java.net.URI;
 
 public class Util {
 	private Util(){}
+
 	private static boolean nIsDebugRelease=false;
+
+	public static final int releaseVersion = 1;
+	//releaseVersion:发布版本，0为自测版本，1为内测版本，2为公测版本，3为正式版本
+	//自测版本：作者自行测试
+	//内测版本：组内成员使用，不建议转发到组外
+	//公测版本：原吴江中学高一（1）班QQ群(群名：荣荣反黑大队，群号：721349332)成员使用，不建议转发到群外
+	//正式版本：所有人都可使用
 
 	public static final long oneDayMillis = 86400000L; //一天的毫秒数
 	public static final long oneHourMillis = 3600000L; //一小时的毫秒数
@@ -115,7 +123,7 @@ public class Util {
 		return bitmap;
 	}
 
-	public static Uri saveBitmapAndReturnURI(String fileName, Bitmap bmp, Context mContext){
+	public static Uri saveBitmapAndReturnUri(String fileName, Bitmap bmp, Context mContext){
 		checkAndCreateImageDir(mContext);
 
 		File saveFile = new File(mContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES), fileName);
@@ -134,13 +142,11 @@ public class Util {
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
 				uri = FileProvider.getUriForFile(mContext, "team.lightcloud.tiantan", saveFile);
 			}
-
 			return uri;
 		} catch (Exception e){
 			e.printStackTrace();
 			Log.i(null,"Failed to save the image.");
 		}
-
 		return null;
 	}
 

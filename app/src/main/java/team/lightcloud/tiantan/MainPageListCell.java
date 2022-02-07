@@ -40,6 +40,4 @@ public class MainPageListCell {
         }
         return planetList;
     }
-
-
 }

@@ -79,7 +79,9 @@
 			android:layout_height="wrap_content"
 			android:padding="3.5pt"
 			android:text="Detailed Information"
-			android:textColor="@color/black" />
+			android:textColor="@color/black"
+			android:textIsSelectable="true"
+			/>
 	</ScrollView>
 
 	<ImageView

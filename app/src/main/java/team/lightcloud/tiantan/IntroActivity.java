@@ -37,7 +37,6 @@ public class IntroActivity extends AppCompatActivity {
 			actionBar.setHomeButtonEnabled(true);
 			actionBar.setDisplayHomeAsUpEnabled(true);
 		}
-
 		WebView webview = findViewById(R.id.intro_webview);
 		webview.getSettings().setJavaScriptEnabled(true);
 		webview.loadUrl("file:///android_asset/index.html");

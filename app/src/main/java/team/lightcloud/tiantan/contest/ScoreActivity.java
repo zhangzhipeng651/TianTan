@@ -25,19 +25,14 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.net.URI;
-import java.text.DecimalFormat;
 
 import team.lightcloud.tiantan.R;
 import team.lightcloud.tiantan.Util;
@@ -69,18 +64,18 @@ public class ScoreActivity extends AppCompatActivity {
 				intent.setAction(Intent.ACTION_SEND);
 				intent.setType("image/png");
 				Bitmap screenShot = Util.activityShot(this);
-				Uri uri = Util.saveBitmapAndReturnURI(System.currentTimeMillis() + ".png", screenShot, this);
+				Uri uri = Util.saveBitmapAndReturnUri(System.currentTimeMillis() + ".png", screenShot, this);
 				if(uri == null){Toast.makeText(this, R.string.encounter_unknown_problem, Toast.LENGTH_SHORT);}
-				intent.putExtra(Intent.EXTRA_STREAM, uri);
-				intent = Intent.createChooser(intent, getString(R.string.share_to));
-				startActivity(intent);
+				else {
+					intent.putExtra(Intent.EXTRA_STREAM, uri);
+					intent = Intent.createChooser(intent, getString(R.string.share_to));
+					startActivity(intent);
+				}
 //			}catch(Exception e){
 //				e.printStackTrace();
 //			}
 		});
 
-//      View starImage = LayoutInflater.from(this).inflate(R.layout.star,null);
-//      star_ctner.addView(starImage);
 		int score = getIntent().getExtras().getInt("score");
 		String[] gradename = getResources().getStringArray(R.array.grades);
 		grade_text_title.setText(gradename[score]);

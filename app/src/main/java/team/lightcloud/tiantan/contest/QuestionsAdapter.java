@@ -19,11 +19,9 @@
 package team.lightcloud.tiantan.contest;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -31,7 +29,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import team.lightcloud.tiantan.MainPageListAdapter;
 import team.lightcloud.tiantan.R;
 
 public class QuestionsAdapter {
