@@ -31,75 +31,76 @@ import android.widget.Toast;
 import java.util.List;
 
 import team.lightcloud.tiantan.contest.ContestActivity;
+import team.lightcloud.tiantan.emulator.PlanetEmulatorActivity;
 
 public class MainPageListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener {
 
-    private Context mContext;
-    private List<MainPageListCell> mList;
+	private Context mContext;
+	private List<MainPageListCell> mList;
 
-    public MainPageListAdapter(Context context, List<MainPageListCell> cell_list) {
-        mContext = context;
-        mList = cell_list;
-    }
+	public MainPageListAdapter(Context context, List<MainPageListCell> cell_list) {
+		mContext = context;
+		mList = cell_list;
+	}
 
-    @Override
-    public int getCount() {
-        return mList.size();
-    }
+	@Override
+	public int getCount() {
+		return mList.size();
+	}
 
-    @Override
-    public Object getItem(int position) {
-        return mList.get(position);
-    }
+	@Override
+	public Object getItem(int position) {
+		return mList.get(position);
+	}
 
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
+	@Override
+	public long getItemId(int position) {
+		return position;
+	}
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
-        if (convertView == null) {
-            holder = new ViewHolder();
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.mainpage_layout, null);
-            holder.name = convertView.findViewById(R.id.mplc_name);
-            holder.description = convertView.findViewById(R.id.mplc_description);
-            convertView.setTag(holder);
-        } else {
-            holder = (ViewHolder) convertView.getTag();
-        }
-        MainPageListCell cell = mList.get(position);
-        holder.name.setText(cell.name);
-        holder.description.setText(cell.description);
-        holder.name.requestFocus();
-        return convertView;
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		ViewHolder holder;
+		if (convertView == null) {
+			holder = new ViewHolder();
+			convertView = LayoutInflater.from(mContext).inflate(R.layout.mainpage_layout, null);
+			holder.name = convertView.findViewById(R.id.mplc_name);
+			holder.description = convertView.findViewById(R.id.mplc_description);
+			convertView.setTag(holder);
+		} else {
+			holder = (ViewHolder) convertView.getTag();
+		}
+		MainPageListCell cell = mList.get(position);
+		holder.name.setText(cell.name);
+		holder.description.setText(cell.description);
+		holder.name.requestFocus();
+		return convertView;
+	}
 
-    }
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		Intent intent;
+		switch (position) {
+			case 0:
+				intent = new Intent(mContext, IntroActivity.class);
+				mContext.startActivity(intent);
+				break;
+			case 1:
+				intent = new Intent(mContext, ContestActivity.class);
+				mContext.startActivity(intent);
+				break;
+			case 2:
+				intent = new Intent(mContext, PlanetEmulatorActivity.class);
+				mContext.startActivity(intent);
+				break;
+			default:
+				Toast.makeText(mContext, R.string.notrealized, Toast.LENGTH_SHORT).show();
+				break;
+		}
+	}
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent;
-        switch (position) {
-            case 0:
-                intent = new Intent(mContext, IntroActivity.class);
-                mContext.startActivity(intent);
-                break;
-            case 1:
-                intent = new Intent(mContext, ContestActivity.class);
-                mContext.startActivity(intent);
-                break;
-            default:
-                Toast.makeText(mContext, R.string.notrealized, Toast.LENGTH_SHORT).show();
-                break;
-        }
-
-    }
-
-    public final class ViewHolder {
-        public TextView name;
-        public TextView description;
-
-
-    }
+	public final class ViewHolder {
+		public TextView name;
+		public TextView description;
+	}
 }

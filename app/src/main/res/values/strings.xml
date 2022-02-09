@@ -17,69 +17,78 @@
   -->
 
 <resources>
-    <string name="app_name">TianTan</string>
-    <string name="settings">Settings</string>
-    <string name="about">About</string>
-    <string name="app_full_name">TianTan -- Astronomy Explorer</string>
-    <string name="author">Author</string>
+	<string name="app_name">TianTan</string>
+	<string name="settings">Settings</string>
+	<string name="about">About</string>
+	<string name="app_full_name">TianTan -- Astronomy Explorer</string>
+	<string name="author">Author</string>
 	<string name="title_activity_settings">Settings</string>
 
-    <!-- 主页选项 -->
-    <string-array name="mainpagelistcell_name">
-        <item>天体介绍</item>
-        <item>答题竞赛</item>
-    </string-array>
+	<!-- 主页选项 -->
+	<string-array name="mainpagelistcell_name">
+		<item>天体介绍</item>
+		<item>答题竞赛</item>
+	</string-array>
 
-    <string-array name="mainpagelistcell_description">
-        <item>介绍太阳系内各天体</item>
-        <item>随机抽取五道选择题，请认真作答</item>
-    </string-array>
-    <string name="name">Name</string>
-    <string name="description">Description</string>
-    <string name="notrealized">This function is not realized yet.</string>
-    <string name="version">Version</string>
-    <string name="author_info">Astronomy Group, Class 1 Senior 1, Wujiang High School</string>
-    <string name="copyright_description">Copyright \u00a9 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School.\n</string>
-    <string name="gplv3_description">TianTan is open source software released under the GNU General Public License version 3.</string>
-    <string name="worker_description">Title writing: Classmate Wu (Not a member of our group)\nMaterials collecting: Huang Hanqing, Liu Chenjie\nProgramming：Zhang Zhipeng</string>
-    <string name="testing_edition">Testing Edition</string>
-    <string name="welcome" translatable="false">欢迎使用天探！</string>
+	<string-array name="mainpagelistcell_description">
+		<item>介绍太阳系内各天体</item>
+		<item>随机抽取五道选择题，请认真作答</item>
+	</string-array>
+	<string name="name">Name</string>
+	<string name="description">Description</string>
+	<string name="notrealized">This function is not realized yet.</string>
+	<string name="version">Version</string>
+	<string name="author_info">Astronomy Group, Class 1 Senior 1, Wujiang High School</string>
+	<string name="copyright_description">Copyright \u00a9 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School.\n</string>
+	<string name="gplv3_description">TianTan is open source software released under the GNU General Public License version 3.</string>
+	<string name="worker_description">Materials collecting: Huang Hanqing, Liu Chenjie\nProgramming：Zhang Zhipeng</string>
+	<string name="testing_edition">Testing Edition</string>
 
-    <string-array name="version_description" translatable="false">
-        <item>自测版本</item>
-        <item>此版本为内测版本，不建议转发给组外人员。</item>
-        <item>此版本为公测版本，不建议转发给班级外人员。</item>
-        <item>欢迎使用！在这里您将了解太阳系内天体知识。</item>
-    </string-array>
+	<string-array name="version_description" translatable="false">
+		<item>自测版本</item>
+		<item>此版本为内测版本，不建议转发给组外人员。</item>
+		<item>此版本为公测版本，不建议转发给班级外人员。</item>
+		<item>欢迎使用！在这里您将了解太阳系内天体知识。</item>
+	</string-array>
 
-    <string-array name="version_state_description">
-        <item>Self-Test</item>
-        <item>Insider</item>
-        <item>Public-Test</item>
-        <item>Release</item>
-    </string-array>
+	<string-array name="version_state_description">
+		<item>Self-Test</item>
+		<item>Insider</item>
+		<item>Public-Test</item>
+		<item>Release</item>
+	</string-array>
 
-    <string name="open_source_link">Open source link:<br/><a href="https://github.com/zhangzhipeng651/TianTan">https://github.com/zhangzhipeng651/TianTan</a></string>
+	<string name="open_source_link">Open source link:<br /><a href="https://github.com/zhangzhipeng651/TianTan">https://github.com/zhangzhipeng651/TianTan</a></string>
 
-    <string-array name="grades">
-        <item>Not good.</item>
-        <item>Not so good.</item>
-        <item>Just so so.</item>
-        <item>Good.</item>
-        <item>Great!</item>
-        <item>Excellent!</item>
-    </string-array>
-    <string name="title_activity_score">Score Result</string>
-    <string name="share">Share</string>
-    <string name="return_">Return</string>
-    <string name="exit">Exit</string>
-    <string name="confirm_exit">Are you sure to exit?</string>
-    <string name="okay">OK</string>
-    <string name="cancel">Cancel</string>
-    <string name="submit">Submit</string>
-    <string name="share_to">Share to</string>
-    <string name="encounter_unknown_problem">Sorry, the program has encounted an unknown problem.</string>
-    <string name="titile_intro">Introduction</string>
-    <string name="no_settings_available">No settings available</string>
-
+	<string-array name="grades">
+		<item>Not good.</item>
+		<item>Not so good.</item>
+		<item>Just so so.</item>
+		<item>Good.</item>
+		<item>Great!</item>
+		<item>Excellent!</item>
+	</string-array>
+	<string name="title_activity_score">Score Result</string>
+	<string name="share">Share</string>
+	<string name="return_">Return</string>
+	<string name="exit">Exit</string>
+	<string name="confirm_exit">Are you sure to exit?</string>
+	<string name="okay">OK</string>
+	<string name="cancel">Cancel</string>
+	<string name="submit">Submit</string>
+	<string name="share_to">Share to</string>
+	<string name="encounter_unknown_problem">Sorry, the program has encounted an unknown problem.</string>
+	<string name="title_intro">Introduction</string>
+	<string name="no_settings_available">No settings available</string>
+	<string name="date">Date</string>
+	<string name="year">Year</string>
+	<string name="month">Month</string>
+	<string name="day">Day</string>
+	<string name="welcome">Welcome to TianTan!</string>
+	<string name="start">Start</string>
+	<string name="pause">Pause</string>
+	<string name="interval">Interval</string>
+	<string name="ms">ms</string>
+	<string name="not_show_again">Don\'t show again</string>
+	<string name="official_website">Visit official website: <br/><a href="https://zhangzhipeng651.github.io/tiantan/">https://zhangzhipeng651.github.io/tiantan/</a></string>
 </resources>

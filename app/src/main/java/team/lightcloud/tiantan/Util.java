@@ -41,11 +41,11 @@ public class Util {
 
 	private static boolean nIsDebugRelease=false;
 
-	public static final int releaseVersion = 1;
+	public static final int releaseVersion = 2;
 	//releaseVersion:发布版本，0为自测版本，1为内测版本，2为公测版本，3为正式版本
 	//自测版本：作者自行测试
 	//内测版本：组内成员使用，不建议转发到组外
-	//公测版本：原吴江中学高一（1）班QQ群(群名：荣荣反黑大队，群号：721349332)成员使用，不建议转发到群外
+	//公测版本：原吴江中学高一（1）班成员使用，不建议转发到群外
 	//正式版本：所有人都可使用
 
 	public static final long oneDayMillis = 86400000L; //一天的毫秒数

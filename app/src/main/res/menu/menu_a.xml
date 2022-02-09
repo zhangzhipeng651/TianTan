@@ -21,18 +21,20 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/menu_settings"
+        app:showAsAction="never"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_settings"
+        />
+
+    <item
             android:id="@+id/menu_about"
-            app:showAsAction="always"
+            app:showAsAction="never"
             android:title="@string/about"
             android:icon="@android:drawable/ic_menu_info_details"
     />
 
-    <item
-        android:id="@+id/menu_settings"
-        app:showAsAction="always"
-        android:title="@string/settings"
-        android:icon="@drawable/ic_settings"
-        />
+
     <item
         android:id="@+id/menu_exit"
         app:showAsAction="always"

@@ -58,6 +58,8 @@ public class About extends AppCompatActivity {
 		sb.append(getString(R.string.copyright_description));
 		sb.append(getString(R.string.gplv3_description));
 		sb.append("\n\n");
+		sb.append(getString(R.string.official_website));
+		sb.append("\n");
 		sb.append(getString(R.string.open_source_link));
 		sb.append("\n\n");
 		sb.append(getString(R.string.worker_description));

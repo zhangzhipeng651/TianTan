@@ -9,8 +9,8 @@ android {
         applicationId "team.lightcloud.tiantan"
         minSdk 21
         targetSdk 29
-        versionCode 3
-        versionName "0.1.${versionCode}"
+        versionCode 4
+        versionName "0.5.${versionCode}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -30,7 +30,8 @@ android {
     android.applicationVariants.all {
         variant ->
             variant.outputs.all {
-                outputFileName = "tiantan-${variant.name}-${variant.versionName}.apk"
+                //outputFileName = "tiantan-${variant.name}-${variant.versionName}.apk"
+                outputFileName = "tiantan-beta-${variant.versionName}.apk"
             }
     }
 

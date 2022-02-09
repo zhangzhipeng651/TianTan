@@ -102,12 +102,7 @@ public class ContestActivity extends AppCompatActivity {
 				if(!Util.isDebugRelease()){
 					AlertDialog.Builder builder = new AlertDialog.Builder(this);
 					builder.setMessage(getString(R.string.confirm_exit));
-					builder.setPositiveButton(R.string.okay,new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							finish();
-						}
-					});
+					builder.setPositiveButton(R.string.okay, (dialog, which) -> finish());
 					builder.setNegativeButton(R.string.cancel,null);
 					builder.create().show();
 				}

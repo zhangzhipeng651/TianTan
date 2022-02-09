@@ -28,11 +28,11 @@
 	<string name="description">描述</string>
 	<string name="notrealized">该功能尚未实现。</string>
 	<string name="version">版本</string>
-	<string name="author_info">吴江中学高一（1）班天文小组</string>
+	<string name="author_info">吴江中学（原）高一（1）班天文小组</string>
 	<string name="testing_edition">测试版本</string>
 
-	<string name="copyright_description">版权所有 \u00a9 2022 吴江中学高一（1）班天文小组\n</string>
-	<string name="worker_description">题字：吴同学（非本组成员）\n资料搜集：黄翰庆、刘陈杰\n软件设计、代码编写：张智鹏</string>
+	<string name="copyright_description">版权所有 \u00a9 2022 吴江中学（原）高一（1）班天文小组\n</string>
+	<string name="worker_description">资料搜集：黄翰庆、刘陈杰\n软件设计、代码编写：张智鹏</string>
 
 	<string-array name="grades">
 		<item>很不好</item>
@@ -50,6 +50,7 @@
 		<item>正式版本</item>
 	</string-array>
 
+	<string name="official_website">访问官网：<br/><a href="https://zhangzhipeng651.github.io/tiantan/">https://zhangzhipeng651.github.io/tiantan/</a></string>
 	<string name="open_source_link">开源链接：<br/><a href="https://github.com/zhangzhipeng651/TianTan">https://github.com/zhangzhipeng651/TianTan</a></string>
 
 	<string name="title_activity_score">得分结果</string>
@@ -62,7 +63,17 @@
 	<string name="submit">提交</string>
 	<string name="share_to">分享到</string>
 	<string name="encounter_unknown_problem">抱歉，本软件遇到未知问题。</string>
-	<string name="titile_intro">天体介绍</string>
+	<string name="title_intro">天体介绍</string>
 	<string name="gplv3_description">天探是在GNU通用公共许可证（第3版）下发布的开源软件。</string>
 	<string name="no_settings_available">暂无设置可用。</string>
+	<string name="date">日期</string>
+	<string name="year">年</string>
+	<string name="month">月</string>
+	<string name="day">日</string>
+	<string name="welcome">欢迎使用天探！</string>
+	<string name="start">开始</string>
+	<string name="pause">暂停</string>
+	<string name="interval">间隔</string>
+	<string name="ms">毫秒</string>
+	<string name="not_show_again">不再提示</string>
 </resources>

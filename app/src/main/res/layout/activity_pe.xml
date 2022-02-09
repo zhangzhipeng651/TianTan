@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ TianTan (天探)
+  ~ Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#060f38"
+	tools:context=".emulator.PlanetEmulatorActivity"
+	>
+	<LinearLayout
+		android:id="@+id/emulator_control_ctner"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:background="#ccffffff">
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			>
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8sp"
+					android:text="@string/date"
+					android:textColor="@color/black" />
+
+				<EditText
+					android:id="@+id/emulator_input_year"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:inputType="numberSigned"
+					android:minWidth="70sp"
+					android:textAlignment="center" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/year"
+					android:textColor="@color/black" />
+
+				<EditText
+					android:id="@+id/emulator_input_month"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:inputType="numberSigned"
+					android:minWidth="40sp"
+					android:textAlignment="center" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/month"
+					android:textColor="@color/black" />
+
+				<EditText
+					android:id="@+id/emulator_input_day"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:inputType="numberSigned"
+					android:minWidth="40sp"
+					android:textAlignment="center" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/day"
+					android:textColor="@color/black" />
+			</LinearLayout>
+
+			<Button
+				android:id="@+id/emulator_btn_ok"
+				android:layout_width="45sp"
+				android:layout_height="40sp"
+				android:layout_alignParentRight="true"
+				android:layout_centerVertical="true"
+				android:layout_marginRight="7dp"
+				android:maxWidth="1px"
+				android:padding="0dp"
+				android:text="@string/okay" />
+		</RelativeLayout>
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8sp"
+					android:text="@string/interval"
+					android:textColor="@color/black" />
+
+				<EditText
+					android:id="@+id/emulator_input_interval"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="right"
+					android:inputType="number"
+					android:minWidth="70sp"
+					android:textAlignment="textEnd"
+					android:maxLength="3"
+					/>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/ms"
+					android:textColor="@color/black" />
+			</LinearLayout>
+			<Button
+				android:id="@+id/emulator_btn_start_pause"
+				android:layout_width="45sp"
+				android:layout_height="40sp"
+				android:layout_alignParentRight="true"
+				android:layout_centerVertical="true"
+				android:layout_marginRight="7dp"
+				android:maxWidth="1px"
+				android:padding="0dp"
+				android:text="@string/start" />
+		</RelativeLayout>
+		<ImageView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:src="@drawable/divider"
+			/>
+	</LinearLayout>
+
+	<team.lightcloud.tiantan.emulator.PaintView
+		android:id="@+id/emulator_paintview"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@+id/emulator_control_ctner"
+
+		/>
+</RelativeLayout>

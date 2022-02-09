@@ -10,6 +10,11 @@
 		android:supportsRtl="false"
 		android:theme="@style/Theme.TianTan">
 		<activity
+			android:name=".emulator.PlanetEmulatorActivity"
+			android:exported="false"
+			android:hardwareAccelerated="false"
+			/><!--PlanetEmulatorActivity禁用硬件加速，因为这可能导致无法绘图-->
+		<activity
 			android:name=".IntroActivity"
 			android:exported="false" />
 		<activity
@@ -35,6 +40,7 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+
 		<provider
 			android:name="androidx.core.content.FileProvider"
 			android:authorities="team.lightcloud.tiantan"
@@ -46,5 +52,4 @@
 		</provider>
 	</application>
 
-	<!--uses-permission android:name="android.permission.INTERNET" /-->
 </manifest>

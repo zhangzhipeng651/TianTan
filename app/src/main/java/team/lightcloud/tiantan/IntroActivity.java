@@ -31,7 +31,7 @@ public class IntroActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_intro);
-		setTitle(R.string.titile_intro);
+		setTitle(MainPageListCell.nameArray[0]);
 		ActionBar actionBar = getSupportActionBar();
 		if (actionBar != null) {
 			actionBar.setHomeButtonEnabled(true);

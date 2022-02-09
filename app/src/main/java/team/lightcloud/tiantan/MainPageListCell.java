@@ -22,22 +22,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainPageListCell {
-    public String name; //名称
-    public String description;  //描述
+	public String name; //名称
+	public String description;  //描述
 
-    public static String[] nameArray = {"天体介绍", "回答问题",};
-    public static String[] descriptionArray = {"介绍太阳系内各天体", "随机抽取五道选择题",};
+	public static final String[] nameArray = {"天体介绍", "回答问题", "太阳系行星公转情况"};
+	public static final String[] descriptionArray = {"介绍太阳系内各天体", "随机抽取五道选择题", "太阳系行星公转情况"};
 
-    public MainPageListCell(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
+	public MainPageListCell(String name, String description) {
+		this.name = name;
+		this.description = description;
+	}
 
-    public static List<MainPageListCell> getDefaultList() {
-        List<MainPageListCell> planetList = new ArrayList<>();
-        for (int i = 0; i < nameArray.length; i++) {
-            planetList.add(new MainPageListCell(nameArray[i], descriptionArray[i]));
-        }
-        return planetList;
-    }
+	public static List<MainPageListCell> getDefaultList() {
+		List<MainPageListCell> planetList = new ArrayList<>();
+		for (int i = 0; i < nameArray.length; i++) {
+			planetList.add(new MainPageListCell(nameArray[i], descriptionArray[i]));
+		}
+		return planetList;
+	}
 }
