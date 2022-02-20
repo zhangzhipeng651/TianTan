@@ -146,7 +146,7 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 					"\n日期与2149年12月6日相差越大，误差越大，且结果始终不可靠。" +
 					"\n本程序所作的太阳系图仅为示意图。" +
 					"\n本程序在某些情况下会卡死。" +
-					"\n\n如果无法绘图，请尝试在手机设置的开发者选项中将“强制进行GPU渲染”关闭。");
+					"\n\n如果无法显示太阳系示意图，请尝试在手机设置的开发者选项中将“强制进行GPU渲染”关闭。");
 			builder.setNeutralButton(R.string.not_show_again, (l, m) -> {
 				SharedPreferences.Editor editor = shared.edit();
 				editor.putInt("haveReadWarnBeforeEmulator", 1);

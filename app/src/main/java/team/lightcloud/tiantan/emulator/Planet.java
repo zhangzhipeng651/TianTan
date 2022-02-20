@@ -30,7 +30,7 @@ public class Planet {
 	private double mr;  //大R是轨道半径，小r是行星半径
 	private int mColor;
 
-	public static final Calendar zeroCalendar = new GregorianCalendar(2149,12 -1 ,6);
+	public static final Calendar zeroCalendar = new GregorianCalendar(2149,12 - 1 ,6);
 
 	public static final String[] planetsName = {
 			"水星",

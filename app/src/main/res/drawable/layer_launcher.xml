@@ -19,32 +19,24 @@
 
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:gravity="fill">
-        <shape>
-            <solid android:color="@color/splash_bgcolor"/>
-        </shape>
-    </item>
+    <item android:drawable="@color/splash_bgcolor"></item>
 
     <item
-            android:gravity="center_horizontal|top"
+            android:gravity="top"
     >
         <bitmap
-                android:gravity="center_horizontal|top"
-                android:src="@drawable/splash_480"
+                android:gravity="top"
+                android:src="@drawable/splash_720"
         />
     </item>
 
     <item
-            android:gravity="center_horizontal|bottom"
+            android:gravity="center_horizontal"
             android:bottom="75dp"
-            android:width="36px"
-            android:height="4.2px"
-
     >
         <bitmap
-                android:gravity="center_horizontal|bottom"
+                android:gravity="bottom"
                 android:src="@drawable/autograph_white_360"
-
 
         />
     </item>
