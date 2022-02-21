@@ -141,7 +141,7 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setCancelable(false);
 			builder.setTitle("使用此功能前须知");
-			builder.setMessage("本功能的计算结果并不可靠。" +
+			builder.setMessage("本功能的计算结果并不可靠，可能与实际有较大偏差。" +
 					"\n本程序的计算原理是假定2149年12月6日发生了一次θ角为零的八星连珠（事实上，那天发生的八星连珠的θ角并不为零），然后根据日期差和我们组查出的数据，计算行星位置。" +
 					"\n日期与2149年12月6日相差越大，误差越大，且结果始终不可靠。" +
 					"\n本程序所作的太阳系图仅为示意图。" +

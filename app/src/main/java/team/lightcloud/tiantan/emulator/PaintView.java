@@ -83,10 +83,14 @@ public class PaintView extends View {
 					planet.getTrackR()*mR*planet.getPositionXwithDeltaDays(pea.deltaDays)+centerPointX,
 					planet.getTrackR()*mR*planet.getPositionYwithDeltaDays(pea.deltaDays)+centerPointY,
 					planet.getPlanetR()*mR);
-			canvas.drawOval(pr,mPaint);
+			canvas.drawOval(pr, mPaint);
+			//mPaint.setColor(0xffffffff);
+			canvas.drawText(planet.getName(),
+					pr.left - 5,
+					pr.top - pr.height(),
+					mPaint);
 		}
-		mPaint.setColor(0xffffffff);
-		canvas.drawText("从2149年12月6日开始的天数:" + pea.deltaDays,0,height-20,mPaint);
+		//canvas.drawText("从2149年12月6日开始的天数:" + pea.deltaDays,0,height-20,mPaint);
 	}
 
 	/**
