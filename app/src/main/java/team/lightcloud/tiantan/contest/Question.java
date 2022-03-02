@@ -27,15 +27,15 @@ public class Question {
 	private ArrayList<String> qSelections;
 	private String qCorrectAnswer;
 
-	public String getTitle(){
+	public String getTitle() {
 		return qTitle;
 	}
 
-	public ArrayList<String> getSelections(){
+	public ArrayList<String> getSelections() {
 		return qSelections;
 	}
 
-	public Question(int questionid){
+	public Question(int questionid) {
 		int iqid = questionid;
 		int maxid = QuestionLibrary.questions.length - 1;
 
@@ -46,33 +46,33 @@ public class Question {
 
 		qTitle = QuestionLibrary.questions[iqid][0];
 		qSelections = new ArrayList<String>();
-		for (String s:QuestionLibrary.questions[iqid])
+		for (String s : QuestionLibrary.questions[iqid])
 			qSelections.add(s);
 		qSelections.remove(0);  //在Selections中移除题目，保留选项
 		qCorrectAnswer = qSelections.get(0);    //此时选项未打乱，正确选项在[0]
 	}
 
-	public void shuffleSelections(){    //此方法用来打乱选项
+	public void shuffleSelections() {    //此方法用来打乱选项
 		Collections.shuffle(qSelections);
 	}
 
-	public static Question generateRandomQuestion(){    //此方法用来随机选取问题，但不保证问题不重复
+	public static Question generateRandomQuestion() {    //此方法用来随机选取问题，但不保证问题不重复
 		int selid = (int) (Math.random() * QuestionLibrary.questions.length);
 		Question q = new Question(selid);
 		q.shuffleSelections();
 		return q;
 	}
 
-	public static List<Question> getDefaultList(){
+	public static List<Question> getDefaultList() {
 		int questionNum = 5;    //默认出5道题
 		List<Question> questionList = new ArrayList<>();
 		List<Integer> chooseList = new ArrayList<>();
-		for(int i = 0;i<QuestionLibrary.questions.length;i++){  //生成{n|0≤n<questions.length, n∊N}的集合
+		for (int i = 0; i < QuestionLibrary.questions.length; i++) {  //生成{n|0≤n<questions.length, n∊N}的集合
 			chooseList.add(i);
 		}
 		Collections.shuffle(chooseList);    //这样可以保证抽取的问题不重复，但questionNum不能大于questions.length，否则会出现异常
 
-		for (int i=0; i < questionNum ; i++){
+		for (int i = 0; i < questionNum; i++) {
 			Question q = new Question(chooseList.get(i));
 			q.shuffleSelections();  //由于没有使用generateRandomQuestion()，需要手动将问题打乱
 			questionList.add(q);
@@ -80,7 +80,7 @@ public class Question {
 		return questionList;
 	}
 
-	public String getCorrectAnswer(){
+	public String getCorrectAnswer() {
 		return qCorrectAnswer;
 	}
 }

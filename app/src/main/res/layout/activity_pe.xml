@@ -17,146 +17,149 @@
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:background="#060f38"
-	tools:context=".emulator.PlanetEmulatorActivity"
-	>
-	<LinearLayout
-		android:id="@+id/emulator_control_ctner"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-		android:background="#ccffffff">
-		<RelativeLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			>
-			<LinearLayout
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignParentLeft="true">
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginLeft="8sp"
-					android:text="@string/date"
-					android:textColor="@color/black" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#060f38"
+    tools:context=".emulator.PlanetEmulatorActivity">
 
-				<EditText
-					android:id="@+id/emulator_input_year"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:gravity="center"
-					android:inputType="numberSigned"
-					android:minWidth="70sp"
-					android:textAlignment="center" />
+    <LinearLayout
+        android:id="@+id/emulator_control_ctner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#ccffffff">
 
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/year"
-					android:textColor="@color/black" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-				<EditText
-					android:id="@+id/emulator_input_month"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:gravity="center"
-					android:inputType="numberSigned"
-					android:minWidth="40sp"
-					android:textAlignment="center" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true">
 
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/month"
-					android:textColor="@color/black" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8sp"
+                    android:text="@string/date"
+                    android:textColor="@color/black" />
 
-				<EditText
-					android:id="@+id/emulator_input_day"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:gravity="center"
-					android:inputType="numberSigned"
-					android:minWidth="40sp"
-					android:textAlignment="center" />
+                <EditText
+                    android:id="@+id/emulator_input_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:minWidth="70sp"
+                    android:textAlignment="center" />
 
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/day"
-					android:textColor="@color/black" />
-			</LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/year"
+                    android:textColor="@color/black" />
 
-			<Button
-				android:id="@+id/emulator_btn_ok"
-				android:layout_width="45sp"
-				android:layout_height="40sp"
-				android:layout_alignParentRight="true"
-				android:layout_centerVertical="true"
-				android:layout_marginRight="7dp"
-				android:maxWidth="1px"
-				android:padding="0dp"
-				android:text="@string/okay" />
-		</RelativeLayout>
-		<RelativeLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/emulator_input_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:minWidth="40sp"
+                    android:textAlignment="center" />
 
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/month"
+                    android:textColor="@color/black" />
 
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginLeft="8sp"
-					android:text="@string/interval"
-					android:textColor="@color/black" />
+                <EditText
+                    android:id="@+id/emulator_input_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:minWidth="40sp"
+                    android:textAlignment="center" />
 
-				<EditText
-					android:id="@+id/emulator_input_interval"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:gravity="right"
-					android:inputType="number"
-					android:minWidth="70sp"
-					android:textAlignment="textEnd"
-					android:maxLength="3"
-					/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day"
+                    android:textColor="@color/black" />
+            </LinearLayout>
 
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/ms"
-					android:textColor="@color/black" />
-			</LinearLayout>
-			<Button
-				android:id="@+id/emulator_btn_start_pause"
-				android:layout_width="45sp"
-				android:layout_height="40sp"
-				android:layout_alignParentRight="true"
-				android:layout_centerVertical="true"
-				android:layout_marginRight="7dp"
-				android:maxWidth="1px"
-				android:padding="0dp"
-				android:text="@string/start" />
-		</RelativeLayout>
-		<ImageView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:src="@drawable/divider"
-			/>
-	</LinearLayout>
+            <Button
+                android:id="@+id/emulator_btn_ok"
+                android:layout_width="45sp"
+                android:layout_height="40sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="7dp"
+                android:maxWidth="1px"
+                android:padding="0dp"
+                android:text="@string/okay" />
+        </RelativeLayout>
 
-	<team.lightcloud.tiantan.emulator.PaintView
-		android:id="@+id/emulator_paintview"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:layout_below="@+id/emulator_control_ctner"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-		/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8sp"
+                    android:text="@string/interval"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/emulator_input_interval"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:inputType="number"
+                    android:minWidth="70sp"
+                    android:textAlignment="textEnd"
+                    android:maxLength="3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ms"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/emulator_btn_start_pause"
+                android:layout_width="45sp"
+                android:layout_height="40sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="7dp"
+                android:maxWidth="1px"
+                android:padding="0dp"
+                android:text="@string/start" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/divider" />
+    </LinearLayout>
+
+    <team.lightcloud.tiantan.emulator.PaintView
+        android:id="@+id/emulator_paintview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/emulator_control_ctner"
+
+        />
 </RelativeLayout>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ TianTan (天探)
   ~ Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
   ~
@@ -17,24 +16,21 @@
   ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+    <!--ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:fillViewport="true"-->
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        tools:context=".MainActivity"
->
-    <!--ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:fillViewport="true"-->
-    <ListView android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:listSelector="@color/transparent"
-              android:divider="@color/transparent"
-              android:id="@+id/listview"
-              android:dividerHeight="0dp"
-              android:background="@color/splash_bgcolor"
-    >
-    </ListView>
+        android:listSelector="@color/transparent"
+        android:divider="@color/transparent"
+        android:id="@+id/listview"
+        android:dividerHeight="0dp"
+        android:background="@color/splash_bgcolor"></ListView>
     <!--/ScrollView-->
 
 </LinearLayout>

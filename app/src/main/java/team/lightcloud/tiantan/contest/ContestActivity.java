@@ -21,6 +21,7 @@ package team.lightcloud.tiantan.contest;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -55,16 +56,16 @@ public class ContestActivity extends AppCompatActivity {
 		LinearLayout viewpager = findViewById(R.id.contest_viewpager);
 		int cnt = adapter.getCount();
 
-		for(int i=0;i < cnt;++i){
+		for (int i = 0; i < cnt; ++i) {
 			viewpager.addView(adapter.getView2(i));
 		}
 
 		Button button_next = findViewById(R.id.contest_button_next);
 		button_next.setOnClickListener(l -> {
-			if(adapter.checkMissingSelections()){
+			if (adapter.checkMissingSelections()) {
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setMessage("您有未做的题目，确定要提交吗？");
-				builder.setPositiveButton(R.string.okay, (a,b) -> showResult());
+				builder.setPositiveButton(R.string.okay, (a, b) -> showResult());
 				builder.setNegativeButton(R.string.cancel, null);
 				builder.create().show();
 			} else {
@@ -74,7 +75,7 @@ public class ContestActivity extends AppCompatActivity {
 		startTime = System.currentTimeMillis();
 	}
 
-	private void showResult(){
+	private void showResult() {
 		int c = adapter.getCorrectSelectionCount();
 		String[] qt = adapter.getQuestionTitleArray();
 		String[] qc = adapter.getCorrectAnswerArray();
@@ -99,14 +100,13 @@ public class ContestActivity extends AppCompatActivity {
 		int id = item.getItemId();
 		switch (id) {
 			case android.R.id.home:
-				if(!Util.isDebugRelease()){
+				if (!Util.isDebugRelease()) {
 					AlertDialog.Builder builder = new AlertDialog.Builder(this);
 					builder.setMessage(getString(R.string.confirm_exit));
 					builder.setPositiveButton(R.string.okay, (dialog, which) -> finish());
-					builder.setNegativeButton(R.string.cancel,null);
+					builder.setNegativeButton(R.string.cancel, null);
 					builder.create().show();
-				}
-				else{
+				} else {
 					finish();
 				}
 

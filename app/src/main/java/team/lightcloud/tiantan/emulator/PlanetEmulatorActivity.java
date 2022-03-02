@@ -74,14 +74,14 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 		Button button_start_pause = findViewById(R.id.emulator_btn_start_pause);
 		button_ok.setOnClickListener(l -> {
 			hideIM();
-			try{
+			try {
 				int year = Integer.parseInt(e_year.getText().toString());
-				int month = Integer.parseInt(e_month.getText().toString()) -1;
+				int month = Integer.parseInt(e_month.getText().toString()) - 1;
 				int day = Integer.parseInt(e_day.getText().toString());
-				calendar = new GregorianCalendar(year,month,day);
+				calendar = new GregorianCalendar(year, month, day);
 				deltaDays = Planet.getDeltaDay(calendar);
 				paintView.postInvalidate();
-			}catch (Exception e){
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		});
@@ -89,12 +89,12 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 		button_start_pause.setOnClickListener(l -> {
 			hideIM();
 			isRunning = !isRunning;
-			button_start_pause.setText(isRunning?R.string.pause:R.string.start);
+			button_start_pause.setText(isRunning ? R.string.pause : R.string.start);
 		});
 
 		calendar = Calendar.getInstance();
 		e_year.setText(String.valueOf(calendar.get(Calendar.YEAR)));
-		e_month.setText(String.valueOf(calendar.get(Calendar.MONTH)+1));
+		e_month.setText(String.valueOf(calendar.get(Calendar.MONTH) + 1));
 		e_day.setText(String.valueOf(calendar.get(Calendar.DATE)));
 
 		deltaDays = Planet.getDeltaDay(calendar);
@@ -114,21 +114,21 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 
 			@Override
 			public void afterTextChanged(Editable s) {
-				if(e_interval.getText().toString().equals("")){
+				if (e_interval.getText().toString().equals("")) {
 					return;
 				}
 				long t = Integer.parseInt(e_interval.getText().toString());
-				if(t == 0) return;  //防止用户输入0时卡死
+				if (t == 0) return;  //防止用户输入0时卡死
 				sleepTime = t;
 			}
 		});
 
-		 handler = new Handler(){
+		handler = new Handler() {
 			@Override
-			public void handleMessage(Message m){
-				if(m.what == REFRESH){
+			public void handleMessage(Message m) {
+				if (m.what == REFRESH) {
 					e_year.setText(String.valueOf(calendar.get(Calendar.YEAR)));
-					e_month.setText(String.valueOf(calendar.get(Calendar.MONTH)+1));
+					e_month.setText(String.valueOf(calendar.get(Calendar.MONTH) + 1));
 					e_day.setText(String.valueOf(calendar.get(Calendar.DATE)));
 				}
 				super.handleMessage(m);
@@ -137,7 +137,7 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 
 		SharedPreferences shared = getSharedPreferences("share", MODE_PRIVATE);
 		int haveReadWarn = shared.getInt("haveReadWarnBeforeEmulator", 0);
-		if(haveReadWarn == 0){
+		if (haveReadWarn == 0) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setCancelable(false);
 			builder.setTitle("使用此功能前须知");
@@ -152,15 +152,15 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 				editor.putInt("haveReadWarnBeforeEmulator", 1);
 				editor.commit();
 			});
-			builder.setPositiveButton(R.string.okay,null);
+			builder.setPositiveButton(R.string.okay, null);
 			builder.show();
 		}
 
 		t = new Thread(() -> {
-			while(true){
-				if(isRunning) {
+			while (true) {
+				if (isRunning) {
 					++deltaDays;
-					calendar.add(Calendar.DATE,1);
+					calendar.add(Calendar.DATE, 1);
 					Message m = new Message();
 					m.what = REFRESH;
 					handler.sendMessage(m);
@@ -190,14 +190,14 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 	}
 
 	@Override
-	public void finish(){
+	public void finish() {
 		super.finish();
 		//t.stop();
 	}
 
-	private void hideIM(){
-		InputMethodManager imm =  (InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE);
-		if(imm != null) {
+	private void hideIM() {
+		InputMethodManager imm = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
+		if (imm != null) {
 			imm.hideSoftInputFromWindow(this.getWindow().getDecorView().getWindowToken(), 0);
 		}
 	}

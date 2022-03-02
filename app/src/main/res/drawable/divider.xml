@@ -17,6 +17,6 @@
   -->
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <size android:height="2px"/>
-    <solid android:color="#15000000"/>
+    <size android:height="2px" />
+    <solid android:color="#15000000" />
 </shape>

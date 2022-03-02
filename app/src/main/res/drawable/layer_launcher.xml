@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ TianTan (天探)
   ~ Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
   ~
@@ -21,23 +20,32 @@
 
     <item android:drawable="@color/splash_bgcolor"></item>
 
-    <item
+    <item android:gravity="top">
+        <bitmap
             android:gravity="top"
-    >
-        <bitmap
-                android:gravity="top"
-                android:src="@drawable/splash_720"
-        />
+            android:src="@drawable/splash_720" />
     </item>
 
     <item
-            android:gravity="center_horizontal"
-            android:bottom="75dp"
-    >
+        android:gravity="center_horizontal"
+        android:bottom="75dp">
         <bitmap
-                android:gravity="bottom"
-                android:src="@drawable/autograph_white_360"
+            android:gravity="bottom"
+            android:src="@drawable/autograph_white_360"
 
-        />
+            />
     </item>
+
+
+<!--    <item>-->
+<!--        <shape android:shape="rectangle">-->
+<!--            <solid android:color="?android:attr/colorBackground" />-->
+<!--        </shape>-->
+<!--    </item>-->
+
+<!--    <item>-->
+<!--        <bitmap-->
+<!--            android:gravity="center"-->
+<!--            android:src="@drawable/ic_launcher" />-->
+<!--    </item>-->
 </layer-list>

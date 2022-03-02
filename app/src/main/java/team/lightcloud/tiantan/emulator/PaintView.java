@@ -36,53 +36,54 @@ public class PaintView extends View {
 
 	public PaintView(Context context) {
 		super(context);
-		if(context instanceof PlanetEmulatorActivity)
+		if (context instanceof PlanetEmulatorActivity)
 			pea = (PlanetEmulatorActivity) context;
 //		Td t = new Td(this);
 //		t.start();
 	}
-	public PaintView(Context context, AttributeSet attrs){
+
+	public PaintView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		if(context instanceof PlanetEmulatorActivity)
+		if (context instanceof PlanetEmulatorActivity)
 			pea = (PlanetEmulatorActivity) context;
 //		Td t = new Td(this);
 //		t.start();
 	}
 
 	@Override
-	protected void onDraw(Canvas canvas){
+	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 		int width = getMeasuredWidth();
 		int height = getMeasuredHeight();
 		int S = width < height ? width : height;
 		double mR = (double) S / 2;
-		double centerPointX = (double)width / 2;
-		double centerPointY = (double)height / 2;
+		double centerPointX = (double) width / 2;
+		double centerPointY = (double) height / 2;
 		mPaint.setAntiAlias(true);
 		mPaint.setDither(true);
 
 		mPaint.setStyle(Style.FILL);
 		mPaint.setColor(0xffff7f00);  //太阳，橙色
-		RectF oval = getRectFwithCircle(centerPointX, centerPointY,Planet.sunR*mR);
-		canvas.drawOval(oval,mPaint);
+		RectF oval = getRectFwithCircle(centerPointX, centerPointY, Planet.sunR * mR);
+		canvas.drawOval(oval, mPaint);
 
 		//Draw trucks
 		mPaint.setStyle(Style.STROKE);
 		mPaint.setColor(0x3fffffff);
-		for(double d:Planet.rList){
-			RectF truck = getRectFwithCircle(centerPointX,centerPointY,d*mR);
-			canvas.drawOval(truck,mPaint);
+		for (double d : Planet.rList) {
+			RectF truck = getRectFwithCircle(centerPointX, centerPointY, d * mR);
+			canvas.drawOval(truck, mPaint);
 		}
 
 		//Draw planets
 		mPaint.setStyle(Style.FILL);
 		List<Planet> planetList = Planet.getDefaultPlanetList();
-		for(Planet planet:planetList){
+		for (Planet planet : planetList) {
 			mPaint.setColor(planet.getColor());
 			RectF pr = getRectFwithCircle(
-					planet.getTrackR()*mR*planet.getPositionXwithDeltaDays(pea.deltaDays)+centerPointX,
-					planet.getTrackR()*mR*planet.getPositionYwithDeltaDays(pea.deltaDays)+centerPointY,
-					planet.getPlanetR()*mR);
+					planet.getTrackR() * mR * planet.getPositionXwithDeltaDays(pea.deltaDays) + centerPointX,
+					planet.getTrackR() * mR * planet.getPositionYwithDeltaDays(pea.deltaDays) + centerPointY,
+					planet.getPlanetR() * mR);
 			canvas.drawOval(pr, mPaint);
 			//mPaint.setColor(0xffffffff);
 			canvas.drawText(planet.getName(),
@@ -95,21 +96,22 @@ public class PaintView extends View {
 
 	/**
 	 * 如果想在onDraw方法中绘图使用本方法，需要在适当的参数上乘mR以适配屏幕
+	 *
 	 * @param Ox 圆心的横坐标
 	 * @param Oy 圆心的纵坐标
-	 * @param r 圆的半径
-	* */
-	private RectF getRectFwithCircle(double Ox, double Oy, double r){
+	 * @param r  圆的半径
+	 */
+	private RectF getRectFwithCircle(double Ox, double Oy, double r) {
 		RectF rect = new RectF(
-				(float)(Ox - r),
-				(float)(Oy + r),
-				(float)(Ox + r),
-				(float)(Oy - r));
+				(float) (Ox - r),
+				(float) (Oy + r),
+				(float) (Ox + r),
+				(float) (Oy - r));
 		return rect;
 	}
 
 	@Override
-	public void postInvalidate(){
+	public void postInvalidate() {
 		super.postInvalidate();
 	}
 

@@ -34,72 +34,72 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView lv;
+	private ListView lv;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setTheme(R.style.Theme_TianTan);
-        setContentView(R.layout.activity_main);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setTheme(R.style.Theme_TianTan);
+		setContentView(R.layout.activity_main);
 
-        //添加列表
-        List<MainPageListCell> list_cell = MainPageListCell.getDefaultList();
-        MainPageListAdapter adapter = new MainPageListAdapter(this, list_cell);
-        lv = findViewById(R.id.listview);
-        lv.setAdapter(adapter);
-        lv.setOnItemClickListener(adapter);
+		//添加列表
+		List<MainPageListCell> list_cell = MainPageListCell.getDefaultList();
+		MainPageListAdapter adapter = new MainPageListAdapter(this, list_cell);
+		lv = findViewById(R.id.listview);
+		lv.setAdapter(adapter);
+		lv.setOnItemClickListener(adapter);
 
-        SharedPreferences shared = getSharedPreferences("share", MODE_PRIVATE);
-        int lastVersionState = shared.getInt("versionstate", -1);
-        if(Util.releaseVersion == 0) {
-            shared.edit().putInt("versionstate",Util.releaseVersion);
-            return;
-        }
-        if(Util.releaseVersion != lastVersionState){
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle(R.string.welcome);
-            StringBuilder sb = new StringBuilder();
-            String[] sa = getResources().getStringArray(R.array.version_description);
-            sb.append(sa[sa.length - 1]);
-            if(Util.releaseVersion != 3){
-                sb.append("\n");
-                sb.append(sa[Util.releaseVersion]);
-            }
-            builder.setMessage(sb.toString());
-            builder.setPositiveButton(R.string.okay,null);
-            builder.show();
-            SharedPreferences.Editor editor = shared.edit();
-            editor.putInt("versionstate", Util.releaseVersion);
-            editor.commit();
-        }
+		SharedPreferences shared = getSharedPreferences("share", MODE_PRIVATE);
+		int lastVersionState = shared.getInt("versionstate", -1);
+		if (Util.releaseVersion == 0) {
+			shared.edit().putInt("versionstate", Util.releaseVersion);
+			return;
+		}
+		if (Util.releaseVersion != lastVersionState) {
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle(R.string.welcome);
+			StringBuilder sb = new StringBuilder();
+			String[] sa = getResources().getStringArray(R.array.version_description);
+			sb.append(sa[sa.length - 1]);
+			if (Util.releaseVersion != 3) {
+				sb.append("\n");
+				sb.append(sa[Util.releaseVersion]);
+			}
+			builder.setMessage(sb.toString());
+			builder.setPositiveButton(R.string.okay, null);
+			builder.show();
+			SharedPreferences.Editor editor = shared.edit();
+			editor.putInt("versionstate", Util.releaseVersion);
+			editor.commit();
+		}
 
-    }
+	}
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //添加菜单
-        getMenuInflater().inflate(R.menu.menu_a, menu);
-        return true;
-    }
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		//添加菜单
+		getMenuInflater().inflate(R.menu.menu_a, menu);
+		return true;
+	}
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        switch (id) {
-            case R.id.menu_about:
-                startActivity(new Intent(this, About.class));
-                break;
-            case R.id.menu_settings:
-                startActivity(new Intent(this, SettingsActivity.class));
-                break;
-            case R.id.menu_exit:
-                this.finish();
-                break;
-            default:
-                Toast.makeText(this, R.string.notrealized, Toast.LENGTH_SHORT).show();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int id = item.getItemId();
+		switch (id) {
+			case R.id.menu_about:
+				startActivity(new Intent(this, About.class));
+				break;
+			case R.id.menu_settings:
+				startActivity(new Intent(this, SettingsActivity.class));
+				break;
+			case R.id.menu_exit:
+				this.finish();
+				break;
+			default:
+				Toast.makeText(this, R.string.notrealized, Toast.LENGTH_SHORT).show();
+				break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 
 }

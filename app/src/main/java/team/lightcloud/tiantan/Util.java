@@ -37,9 +37,10 @@ import java.io.FileOutputStream;
 import java.net.URI;
 
 public class Util {
-	private Util(){}
+	private Util() {
+	}
 
-	private static boolean nIsDebugRelease=false;
+	private static boolean nIsDebugRelease = false;
 
 	public static final int releaseVersion = 2;
 	//releaseVersion:发布版本，0为自测版本，1为内测版本，2为公测版本，3为正式版本
@@ -53,7 +54,7 @@ public class Util {
 	public static final long oneMinuteMillis = 60000L; //一分钟的毫秒数
 	//public static final String defaultImageDir = "/images/";
 
-	public static boolean isDebugRelease(){
+	public static boolean isDebugRelease() {
 		return nIsDebugRelease;
 	}
 
@@ -64,32 +65,32 @@ public class Util {
 			nIsDebugRelease = false;
 	}
 
-	public static String getProperTimeFormat(long millis){     /* 这里的Time指的是时间间隔，不是时刻 */
+	public static String getProperTimeFormat(long millis) {     /* 这里的Time指的是时间间隔，不是时刻 */
 		/* 这个方法能将毫秒数转换为*天*小时*分*秒*毫秒的形式 */
 		long operateTime = millis;
 		StringBuilder sb = new StringBuilder();
 
-		if(operateTime >= oneDayMillis){
+		if (operateTime >= oneDayMillis) {
 			long day = operateTime / oneDayMillis;
 			operateTime = (operateTime % oneDayMillis);
 			sb.append(day + "天");
 		}
-		if(operateTime >= oneHourMillis){
+		if (operateTime >= oneHourMillis) {
 			long hour = operateTime / oneHourMillis;
 			operateTime = (operateTime % oneHourMillis);
 			sb.append(hour + "小时");
 		}
-		if(operateTime >= oneMinuteMillis){
+		if (operateTime >= oneMinuteMillis) {
 			long min = operateTime / oneMinuteMillis;
 			operateTime = (operateTime % oneMinuteMillis);
 			sb.append(min + "分");
 		}
-		if(operateTime >= 1000L){
+		if (operateTime >= 1000L) {
 			long sec = operateTime / 1000L;
 			operateTime = (operateTime % 1000L);
 			sb.append(sec + "秒");
 		}
-		if(operateTime > 0L){
+		if (operateTime > 0L) {
 			sb.append(operateTime + "毫秒");
 		}
 
@@ -115,7 +116,7 @@ public class Util {
 		int height = outMetrics.heightPixels;
 
 		Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache(), 0, statusBarHeight, width,
-				height-statusBarHeight);
+				height - statusBarHeight);
 
 		view.destroyDrawingCache();
 		view.setDrawingCacheEnabled(false);
@@ -123,57 +124,56 @@ public class Util {
 		return bitmap;
 	}
 
-	public static Uri saveBitmapAndReturnUri(String fileName, Bitmap bmp, Context mContext){
+	public static Uri saveBitmapAndReturnUri(String fileName, Bitmap bmp, Context mContext) {
 		checkAndCreateImageDir(mContext);
 
 		File saveFile = new File(mContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES), fileName);
 
-		try{
+		try {
 			FileOutputStream saveImgOut = new FileOutputStream(saveFile);
 			bmp.compress(Bitmap.CompressFormat.PNG, 80, saveImgOut);
 			saveImgOut.flush();
 			saveImgOut.close();
-			Log.i(null,"The image was successfully saved.");
+			Log.i(null, "The image was successfully saved.");
 
 			String path = saveFile.toURI().toString();
 			Uri uri = Uri.parse(path);
 
 			// 为了与 Android 7 和更高版本兼容，使用FileProvider
-			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
 				uri = FileProvider.getUriForFile(mContext, "team.lightcloud.tiantan", saveFile);
 			}
 			return uri;
-		} catch (Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
-			Log.i(null,"Failed to save the image.");
+			Log.i(null, "Failed to save the image.");
 		}
 		return null;
 	}
 
-	private static void checkAndCreateImageDir(Context mContext){
+	private static void checkAndCreateImageDir(Context mContext) {
 		String checkDirPath = mContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES).getPath();
 		File f = new File(checkDirPath);
-		if(!f.exists()){
+		if (!f.exists()) {
 			f.mkdirs();
 		}
 	}
 
-	public static void cleanImage(Context mContext){
+	public static void cleanImage(Context mContext) {
 		File f = new File(mContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES).getPath());
-		if(f.isDirectory()){
+		if (f.isDirectory()) {
 			File[] files = f.listFiles();
 			try {
 				for (File fl : files) {
 					fl.delete();
 				}
-				Log.i(null,"Successfully cleaned up the images.");
-			}catch(Exception e){
+				Log.i(null, "Successfully cleaned up the images.");
+			} catch (Exception e) {
 				e.printStackTrace();
 				Log.e(null, "Unable to clean up the images.");
 			}
 
-		}
-		else{
+		} else {
 			Log.w(null, "No available directory found.");
 		}
 	}

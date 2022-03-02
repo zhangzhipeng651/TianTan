@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ TianTan (天探)
   ~ Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
   ~
@@ -17,70 +16,75 @@
   ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_height="14dp"
+        android:layout_width="match_parent"
+        android:background="@color/transparent"
+
+
+        />
+
+    <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
->
-    <View
-            android:layout_height="14dp"
-            android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+
+        >
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
             android:background="@color/transparent"
+            android:layout_weight="1" />
 
-
-    />
-    <LinearLayout
+        <androidx.cardview.widget.CardView
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1"
+            app:cardCornerRadius="8dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_weight="2">
 
-    >
-        <View
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:background="@color/transparent"
-                android:layout_weight="1"
-        />
-        <androidx.cardview.widget.CardView
-
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="8dp"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:layout_weight="2"
-        >
-            <LinearLayout
+                android:orientation="vertical"
+                android:layout_margin="6pt"
+
+                >
+
+                <TextView
+                    android:id="@+id/mplc_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="6pt"
+                    android:text="@string/name"
+                    android:textSize="18dp"
+                    android:textColor="#000000"
 
-            >
+                    />
 
-                <TextView android:id="@+id/mplc_name" android:layout_width="match_parent"
-                          android:layout_height="wrap_content"
-                          android:text="@string/name"
-                          android:textSize="18dp"
-                          android:textColor="#000000"
-
-                />
-                <TextView android:id="@+id/mplc_description" android:layout_width="match_parent"
-                          android:layout_height="wrap_content"
-                          android:text="@string/description"
-                          android:textSize="13dp"
-                />
+                <TextView
+                    android:id="@+id/mplc_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/description"
+                    android:textSize="13dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <View
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:background="@color/transparent"
-                android:layout_weight="1"
-        />
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_weight="1" />
 
     </LinearLayout>
 

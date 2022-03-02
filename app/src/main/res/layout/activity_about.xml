@@ -18,41 +18,38 @@
   ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
-<LinearLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	tools:context=".About"
-	android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".About"
+    android:orientation="vertical"
 
-	>
+    >
 
-	<ImageView
-		android:layout_width="45pt"
-		android:layout_height="wrap_content"
-		android:paddingTop="10pt"
-		android:paddingBottom="5pt"
-		android:src="@mipmap/ic_launcher"
-		android:adjustViewBounds="true"
-		android:layout_gravity="center"
-		/>
+    <ImageView
+        android:layout_width="45pt"
+        android:layout_height="wrap_content"
+        android:paddingTop="10pt"
+        android:paddingBottom="5pt"
+        android:src="@mipmap/ic_launcher"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center" />
 
-	<ImageView
-		android:layout_width="110pt"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center"
-		android:src="@drawable/autograph_2048"
-		android:adjustViewBounds="true"
+    <ImageView
+        android:layout_width="110pt"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/autograph_2048"
+        android:adjustViewBounds="true"
 
-		/>
+        />
 
-	<TextView
-		android:id="@+id/aboutpage_detailinfo"
-		android:layout_margin="6pt"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:text="详细信息"
-		android:textIsSelectable="true"
-		/>
+    <TextView
+        android:id="@+id/aboutpage_detailinfo"
+        android:layout_margin="6pt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="详细信息"
+        android:textIsSelectable="true" />
 </LinearLayout>

@@ -54,23 +54,24 @@ public class ScoreActivity extends AppCompatActivity {
 
 		Button button_return = (Button) findViewById(R.id.score_return);
 		Button button_share = (Button) findViewById(R.id.score_share);
-		TextView grade_text_title = (TextView) findViewById(R.id.grade_text_title) ;
+		TextView grade_text_title = (TextView) findViewById(R.id.grade_text_title);
 		button_return.setOnClickListener(l -> {
 			this.finish();
 		});
 		button_share.setOnClickListener(l -> {
 //			try {
-				Intent intent = new Intent();
-				intent.setAction(Intent.ACTION_SEND);
-				intent.setType("image/png");
-				Bitmap screenShot = Util.activityShot(this);
-				Uri uri = Util.saveBitmapAndReturnUri(System.currentTimeMillis() + ".png", screenShot, this);
-				if(uri == null){Toast.makeText(this, R.string.encounter_unknown_problem, Toast.LENGTH_SHORT);}
-				else {
-					intent.putExtra(Intent.EXTRA_STREAM, uri);
-					intent = Intent.createChooser(intent, getString(R.string.share_to));
-					startActivity(intent);
-				}
+			Intent intent = new Intent();
+			intent.setAction(Intent.ACTION_SEND);
+			intent.setType("image/png");
+			Bitmap screenShot = Util.activityShot(this);
+			Uri uri = Util.saveBitmapAndReturnUri(System.currentTimeMillis() + ".png", screenShot, this);
+			if (uri == null) {
+				Toast.makeText(this, R.string.encounter_unknown_problem, Toast.LENGTH_SHORT);
+			} else {
+				intent.putExtra(Intent.EXTRA_STREAM, uri);
+				intent = Intent.createChooser(intent, getString(R.string.share_to));
+				startActivity(intent);
+			}
 //			}catch(Exception e){
 //				e.printStackTrace();
 //			}
@@ -79,13 +80,13 @@ public class ScoreActivity extends AppCompatActivity {
 		int score = getIntent().getExtras().getInt("score");
 		String[] gradename = getResources().getStringArray(R.array.grades);
 		grade_text_title.setText(gradename[score]);
-		for(int i = 0; i < score; ++i){
-			View starImage = LayoutInflater.from(this).inflate(R.layout.star,null);
+		for (int i = 0; i < score; ++i) {
+			View starImage = LayoutInflater.from(this).inflate(R.layout.star, null);
 			star_ctner.addView(starImage);
 		}
-		int d = 5-score;
-		for(int i=0;i<d;++i){
-			View emptystarImage = LayoutInflater.from(this).inflate(R.layout.emptystar,null);
+		int d = 5 - score;
+		for (int i = 0; i < d; ++i) {
+			View emptystarImage = LayoutInflater.from(this).inflate(R.layout.emptystar, null);
 			star_ctner.addView(emptystarImage);
 		}
 
@@ -102,9 +103,9 @@ public class ScoreActivity extends AppCompatActivity {
 		int c = title.length;
 		StringBuilder sb = new StringBuilder();
 		sb.append("得分详情：\n\n");
-		for(int i=0;i<c;++i){
+		for (int i = 0; i < c; ++i) {
 			sb.append("第");
-			sb.append((i+1));
+			sb.append((i + 1));
 			sb.append("题：\n");
 			sb.append("题目：");
 			sb.append(title[i]);
@@ -112,10 +113,10 @@ public class ScoreActivity extends AppCompatActivity {
 			sb.append("正确选项：");
 			sb.append(correct[i]);
 			sb.append("\n");
-			if(!select[i].equals("")) {
+			if (!select[i].equals("")) {
 				sb.append("您选了：");
 				sb.append(select[i]);
-			}else{
+			} else {
 				sb.append("您未作答");
 			}
 			sb.append("\n\n");
@@ -137,7 +138,7 @@ public class ScoreActivity extends AppCompatActivity {
 	}
 
 	@Override
-	public void finish(){
+	public void finish() {
 		super.finish();
 		Log.i(null, "Starting deleting temporary data");
 		Util.cleanImage(this);

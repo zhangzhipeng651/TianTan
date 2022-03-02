@@ -30,7 +30,7 @@ public class Planet {
 	private double mr;  //大R是轨道半径，小r是行星半径
 	private int mColor;
 
-	public static final Calendar zeroCalendar = new GregorianCalendar(2149,12 - 1 ,6);
+	public static final Calendar zeroCalendar = new GregorianCalendar(2149, 12 - 1, 6);
 
 	public static final String[] planetsName = {
 			"水星",
@@ -88,7 +88,7 @@ public class Planet {
 
 	public static final double sunR = 0.04d; //虽然作者将太阳的半径写在Planet文件中，但它是一颗恒星，数据仅为作示意图之用
 
-	public Planet(int id){  //id范围0-7，0为水星，7为海王星，以此类推
+	public Planet(int id) {  //id范围0-7，0为水星，7为海王星，以此类推
 		mName = planetsName[id];
 		mT = tList[id];
 		mR = rList[id];
@@ -96,49 +96,51 @@ public class Planet {
 		mColor = pColorList[id];
 	}
 
-	public String getName(){
+	public String getName() {
 		return mName;
 	}
 
-	public double getOmega(){   //角速度，单位为(弧度/天)
-		double omg = 2*Math.PI/mT;    //ω=2π/T
+	public double getOmega() {   //角速度，单位为(弧度/天)
+		double omg = 2 * Math.PI / mT;    //ω=2π/T
 		return omg;
 
 	}
 
-	public double getTrackR(){
+	public double getTrackR() {
 		return mR;
 	}
-	public double getPlanetR(){
+
+	public double getPlanetR() {
 		return mr;
 	}
 
-	public int getColor(){
+	public int getColor() {
 		return mColor;
 	}
 
-	public static List<Planet> getDefaultPlanetList(){
+	public static List<Planet> getDefaultPlanetList() {
 		List<Planet> list = new ArrayList<>();
-		for(int i=0; i<planetsName.length; ++i){
+		for (int i = 0; i < planetsName.length; ++i) {
 			list.add(new Planet(i));
 		}
 		return list;
 	}
 
-	public double getPositionXwithDeltaDays(long days){
+	public double getPositionXwithDeltaDays(long days) {
 		//横坐标用cos
-		double x = Math.cos(getOmega()*days);
+		double x = Math.cos(getOmega() * days);
 		return x;
 	}
-	public double getPositionYwithDeltaDays(long days){
+
+	public double getPositionYwithDeltaDays(long days) {
 		//纵坐标用sin
 		//注：Canvas坐标系y轴正方向与数学坐标系y轴正方向相反，因此这里求得的值取相反数
-		double y = -Math.sin(getOmega()*days);
+		double y = -Math.sin(getOmega() * days);
 		return y;
 	}
 
-	public static long getDeltaDay(Calendar cal){
-		long d = (cal.getTimeInMillis() - Planet.zeroCalendar.getTimeInMillis())/86400000L;
+	public static long getDeltaDay(Calendar cal) {
+		long d = (cal.getTimeInMillis() - Planet.zeroCalendar.getTimeInMillis()) / 86400000L;
 		return d;
 	}
 }
