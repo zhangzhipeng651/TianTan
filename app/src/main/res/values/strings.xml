@@ -41,7 +41,7 @@
     <string name="author_info">吴江中学（原）高一（1）班天文小组</string>
     <string name="copyright_description">版权所有 \u00a9 2022 吴江中学（原）高一（1）班天文小组\n</string>
     <string name="gplv3_description">天探是在GNU通用公共许可证（第3版）下发布的开源软件。</string>
-    <string name="worker_description">资料搜集：黄翰庆、刘陈杰\n软件设计、代码编写：张智鹏</string>
+    <string name="worker_description">资料搜集：黄翰庆、刘陈杰\n软件开发：张智鹏</string>
     <string name="testing_edition">测试版本</string>
 
     <string-array name="version_description" translatable="false">
@@ -91,4 +91,6 @@
     <string name="ms">毫秒</string>
     <string name="not_show_again">不再提示</string>
     <string name="official_website">访问官网：<br /><a href="https://zhangzhipeng651.github.io/tiantan/">https://zhangzhipeng651.github.io/tiantan/</a></string>
+
+    <string name="check_for_updates">检查新版本</string>
 </resources>

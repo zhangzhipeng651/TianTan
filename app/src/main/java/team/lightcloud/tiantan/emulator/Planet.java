@@ -28,6 +28,7 @@ public class Planet {
 	private double mT;
 	private double mR;
 	private double mr;  //大R是轨道半径，小r是行星半径
+	private double mPhi;
 	private int mColor;
 
 	public static final Calendar zeroCalendar = new GregorianCalendar(2149, 12 - 1, 6);
@@ -75,6 +76,17 @@ public class Planet {
 			0.015d,
 	};
 
+	public static final double[] phiList = {     //初相，数据仅为作示意图之用。参考了“Solar Walk Lite”软件中行星的位置。
+			0.00d,
+			0.00d,
+			0.00d,
+			Math.PI,
+			Math.PI,
+			0.00d,
+			Math.PI,
+			Math.PI,
+	};
+
 	public static final int[] pColorList = {    //行星的颜色，必须加上"ff"的前缀，否则变为透明色
 			0xff808080,
 			0xffdaae14,
@@ -94,6 +106,7 @@ public class Planet {
 		mR = rList[id];
 		mr = prList[id];
 		mColor = pColorList[id];
+		mPhi = phiList[id];
 	}
 
 	public String getName() {
@@ -104,6 +117,15 @@ public class Planet {
 		double omg = 2 * Math.PI / mT;    //ω=2π/T
 		return omg;
 
+	}
+
+	public double getThetaWithDays(long days){
+		double theta = getOmega() * days + getPhi();
+		return theta;
+	}
+
+	public double getPhi(){
+		return mPhi;
 	}
 
 	public double getTrackR() {
@@ -128,14 +150,14 @@ public class Planet {
 
 	public double getPositionXwithDeltaDays(long days) {
 		//横坐标用cos
-		double x = Math.cos(getOmega() * days);
+		double x = Math.cos(getThetaWithDays(days));
 		return x;
 	}
 
 	public double getPositionYwithDeltaDays(long days) {
 		//纵坐标用sin
 		//注：Canvas坐标系y轴正方向与数学坐标系y轴正方向相反，因此这里求得的值取相反数
-		double y = -Math.sin(getOmega() * days);
+		double y = -Math.sin(getThetaWithDays(days));
 		return y;
 	}
 

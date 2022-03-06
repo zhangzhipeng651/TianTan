@@ -45,6 +45,17 @@
 
         />
 
+    <ImageButton
+        android:id="@+id/aboutpage_checkforupdates"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:src="@drawable/check_for_updates"
+        android:scaleType="centerInside"
+        android:layout_marginTop="6dp"
+        android:padding="10dp"
+        />
+
     <TextView
         android:id="@+id/aboutpage_detailinfo"
         android:layout_margin="6pt"
@@ -52,4 +63,5 @@
         android:layout_height="wrap_content"
         android:text="详细信息"
         android:textIsSelectable="true" />
+
 </LinearLayout>

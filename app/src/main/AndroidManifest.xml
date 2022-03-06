@@ -12,7 +12,8 @@
         <activity
             android:name=".emulator.PlanetEmulatorActivity"
             android:exported="false"
-            android:hardwareAccelerated="false" /><!--PlanetEmulatorActivity禁用硬件加速，因为这可能导致无法绘图-->
+            android:hardwareAccelerated="false" />
+        <!--PlanetEmulatorActivity禁用硬件加速，因为这可能导致无法绘图-->
         <activity
             android:name=".IntroActivity"
             android:exported="false" />
@@ -50,5 +51,5 @@
                 android:resource="@xml/file_paths" />
         </provider>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
