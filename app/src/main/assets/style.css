@@ -22,9 +22,15 @@ a{
     text-decoration: none;
 }
 button{
-    background-color: #060f38;
+    background-color: #084c78;
     color:white;
+	border-radius: 1.3mm;
     font-size: medium;
+	padding-left: 3mm;
+	padding-right: 3mm;
+	padding-top: 1mm;
+	padding-bottom: 1mm;
+	user-select: none;
 }
 
 .rimg{

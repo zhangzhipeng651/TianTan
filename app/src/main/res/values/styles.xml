@@ -18,7 +18,7 @@
 
 <resources>
 
-    <style name="AppCompatTheme" parent="Theme.AppCompat.Light.NoActionBar" />
+    <!--style name="AppCompatTheme" parent="@style/Theme.AppCompat.Light.NoActionBar" /-->
 
     <style name="AppTheme.StartingWindowTheme" parent="Theme.TianTan">
         <item name="android:windowBackground">@drawable/layer_launcher</item>

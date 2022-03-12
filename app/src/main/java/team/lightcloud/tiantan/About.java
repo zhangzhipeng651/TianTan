@@ -18,6 +18,7 @@
 
 package team.lightcloud.tiantan;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -72,6 +73,11 @@ public class About extends AppCompatActivity {
 		ImageButton b_check_updates = findViewById(R.id.aboutpage_checkforupdates);
 		b_check_updates.setOnClickListener(l -> {
 			Toast.makeText(this, R.string.notrealized, Toast.LENGTH_SHORT).show();
+			ProgressDialog pd = new ProgressDialog(this);
+			pd.setTitle(R.string.please_wait);
+			pd.setMessage(getString(R.string.check_for_updates));
+			pd.setCancelable(true);
+			pd.show();
 		});
 	}
 

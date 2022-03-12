@@ -23,16 +23,24 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.nio.channels.CancelledKeyException;
 import java.util.Calendar;
@@ -92,6 +100,22 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 			button_start_pause.setText(isRunning ? R.string.pause : R.string.start);
 		});
 
+		FloatingActionButton fab_share = findViewById(R.id.emulator_sharebutton);
+		fab_share.setOnClickListener(l -> {
+				Intent intent = new Intent();
+				intent.setAction(Intent.ACTION_SEND);
+				intent.setType("image/png");
+				Bitmap screenShot = Util.activityShot(this);
+				Uri uri = Util.saveBitmapAndReturnUri(System.currentTimeMillis() + ".png", screenShot, this);
+				if (uri == null) {
+					Toast.makeText(this, R.string.encounter_unknown_problem, Toast.LENGTH_SHORT);
+				} else {
+					intent.putExtra(Intent.EXTRA_STREAM, uri);
+					intent = Intent.createChooser(intent, getString(R.string.share_to));
+					startActivity(intent);
+				}
+		});
+
 		calendar = Calendar.getInstance();
 		e_year.setText(String.valueOf(calendar.get(Calendar.YEAR)));
 		e_month.setText(String.valueOf(calendar.get(Calendar.MONTH) + 1));
@@ -99,29 +123,48 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 
 		deltaDays = Planet.getDeltaDay(calendar);
 
-		EditText e_interval = findViewById(R.id.emulator_input_interval);
-		e_interval.setText(String.valueOf(sleepTime));
-		e_interval.addTextChangedListener(new TextWatcher() {
+//		EditText e_interval = findViewById(R.id.emulator_input_interval);
+//		e_interval.setText(String.valueOf(sleepTime));
+//		e_interval.addTextChangedListener(new TextWatcher() {
+//			@Override
+//			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//			}
+//
+//			@Override
+//			public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//			}
+//
+//			@Override
+//			public void afterTextChanged(Editable s) {
+//				if (e_interval.getText().toString().equals("")) {
+//					return;
+//				}
+//				long t = Integer.parseInt(e_interval.getText().toString());
+//				if (t == 0) return;  //防止用户输入0时卡死
+//				sleepTime = t;
+//			}
+//		});
+
+		SeekBar seekBar = findViewById(R.id.emulator_speed);
+		seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+			public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+				sleepTime = 1000/i;
+			}
+
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
 
 			}
 
 			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
+			public void onStopTrackingTouch(SeekBar seekBar) {
 
-			}
-
-			@Override
-			public void afterTextChanged(Editable s) {
-				if (e_interval.getText().toString().equals("")) {
-					return;
-				}
-				long t = Integer.parseInt(e_interval.getText().toString());
-				if (t == 0) return;  //防止用户输入0时卡死
-				sleepTime = t;
 			}
 		});
+		seekBar.setProgress(1000/(int)sleepTime);
 
 		handler = new Handler() {
 			@Override
@@ -141,7 +184,7 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setCancelable(false);
 			builder.setTitle("使用此功能前须知");
-			builder.setMessage("本功能的计算结果并不可靠，可能与实际有较大偏差。" +
+			builder.setMessage("本功能的计算出的行星位置并不准确，欢迎大家来指正。" +
 					"\n本程序的计算原理是假定2149年12月6日发生了一次θ角为零的八星连珠（事实上，那天发生的八星连珠的θ角并不为零），然后根据日期差和我们组查出的数据，计算行星位置。" +
 					"\n日期与2149年12月6日相差越大，误差越大，且结果始终不可靠。" +
 					"\n本程序所作的太阳系图仅为示意图。" +
@@ -151,6 +194,10 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 				SharedPreferences.Editor editor = shared.edit();
 				editor.putInt("haveReadWarnBeforeEmulator", 1);
 				editor.commit();
+			});
+
+			builder.setNegativeButton(R.string.exit, (l, m) -> {
+				finish();
 			});
 			builder.setPositiveButton(R.string.okay, null);
 			builder.show();
@@ -192,7 +239,9 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 	@Override
 	public void finish() {
 		super.finish();
-		//t.stop();
+		Log.i(null, "Starting deleting temporary data");
+		Util.cleanImage(this);
+
 	}
 
 	private void hideIM() {
@@ -201,6 +250,7 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 			imm.hideSoftInputFromWindow(this.getWindow().getDecorView().getWindowToken(), 0);
 		}
 	}
+
 
 
 }

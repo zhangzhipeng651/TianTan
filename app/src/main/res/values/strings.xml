@@ -93,4 +93,9 @@
     <string name="official_website">访问官网：<br /><a href="https://zhangzhipeng651.github.io/tiantan/">https://zhangzhipeng651.github.io/tiantan/</a></string>
 
     <string name="check_for_updates">检查新版本</string>
+    <string name="please_wait">请稍候</string>
+
+    <string name="speed">速度</string>
+    <string name="slow">慢</string>
+    <string name="fast">快</string>
 </resources>

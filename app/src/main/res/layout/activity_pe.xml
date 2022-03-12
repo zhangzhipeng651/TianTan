@@ -54,7 +54,8 @@
                     android:gravity="center"
                     android:inputType="numberSigned"
                     android:minWidth="70sp"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -95,19 +96,22 @@
 
             <Button
                 android:id="@+id/emulator_btn_ok"
-                android:layout_width="45sp"
-                android:layout_height="40sp"
+                android:layout_width="55sp"
+                android:layout_height="45sp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="7dp"
+                android:layout_marginRight="4dp"
                 android:maxWidth="1px"
                 android:padding="0dp"
-                android:text="@string/okay" />
+                android:text="@string/okay"
+                android:textColor="@color/white"
+                app:rippleColor="@color/white" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -117,10 +121,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8sp"
-                    android:text="@string/interval"
+                    android:text="@string/speed"
+                    android:layout_marginTop="5pt"
+                    android:textColor="@color/black" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8sp"
+                    android:text="@string/slow"
+                    android:layout_marginTop="5pt"
                     android:textColor="@color/black" />
 
-                <EditText
+                <!--EditText
                     android:id="@+id/emulator_input_interval"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -128,25 +140,42 @@
                     android:inputType="number"
                     android:minWidth="70sp"
                     android:textAlignment="textEnd"
-                    android:maxLength="3" />
+                    android:maxLength="3" /-->
+                <SeekBar
+                    android:id="@+id/emulator_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:min="1"
+                    android:max="1000"
+                    android:progress="30"
+                    android:layout_marginTop="5pt"
+                    app:rippleColor="@color/white"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/ms"
-                    android:textColor="@color/black" />
+                    android:text="@string/fast"
+                    android:layout_marginRight="70dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="5pt"/>
             </LinearLayout>
 
             <Button
                 android:id="@+id/emulator_btn_start_pause"
-                android:layout_width="45sp"
-                android:layout_height="40sp"
+                android:layout_width="55sp"
+                android:layout_height="45sp"
                 android:layout_alignParentRight="true"
+
                 android:layout_centerVertical="true"
-                android:layout_marginRight="7dp"
+                android:layout_marginRight="4dp"
+                android:fontFamily="sans-serif-black"
                 android:maxWidth="1px"
                 android:padding="0dp"
-                android:text="@string/start" />
+                android:text="@string/start"
+                app:rippleColor="@color/white"
+                android:textColor="@color/white" />
         </RelativeLayout>
 
         <ImageView
@@ -162,4 +191,17 @@
         android:layout_below="@+id/emulator_control_ctner"
 
         />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/emulator_sharebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/emulator_paintview"
+        android:layout_alignBottom="@id/emulator_paintview"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:clickable="true"
+        app:rippleColor="@color/white"
+        android:tooltipText="@string/share"
+        app:srcCompat="@android:drawable/ic_menu_share" />
 </RelativeLayout>

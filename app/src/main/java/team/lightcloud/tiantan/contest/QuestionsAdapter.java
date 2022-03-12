@@ -60,6 +60,7 @@ public class QuestionsAdapter {
 		ArrayList<String> sellist = question.getSelections();
 		for (String s : sellist) {
 			RadioButton radiobutton = new RadioButton(mContext);
+
 			radiobutton.setText(s);
 			holder.selGroup.addView(radiobutton);
 			//Log.w(null,"Add new list.");
@@ -123,6 +124,7 @@ public class QuestionsAdapter {
 			int c = selGroup.getChildCount();
 			for (int i = 0; i < c; ++i) {
 				RadioButton b = (RadioButton) selGroup.getChildAt(i);
+
 				if (b.isChecked()) {
 					return b.getText().toString();
 				}

@@ -50,10 +50,11 @@
         android:layout_width="135dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:src="@drawable/check_for_updates"
+        android:src="@drawable/check_for_updates_white"
         android:scaleType="centerInside"
         android:layout_marginTop="6dp"
         android:padding="10dp"
+        android:elevation="2.5dp"
         />
 
     <TextView
