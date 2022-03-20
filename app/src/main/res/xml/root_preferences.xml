@@ -16,6 +16,12 @@
   ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
-    <Preference app:title="@string/no_settings_available" />
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Preference app:title="@string/no_settings_available" / -->
+    <SwitchPreference
+        android:key="enable_planet_emulator"
+        app:title="启用“太阳系行星公转情况”功能"
+        app:summary="数据可能不准确，重启软件后生效"
+        />
 </PreferenceScreen>

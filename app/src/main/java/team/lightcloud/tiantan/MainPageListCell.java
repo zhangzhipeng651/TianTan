@@ -18,12 +18,18 @@
 
 package team.lightcloud.tiantan;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
+import androidx.preference.PreferenceManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainPageListCell {
 	public String name; //名称
 	public String description;  //描述
+	//private Context mContext;
 
 	public static final String[] nameArray = {"天体介绍", "回答问题", "太阳系行星公转情况"};
 	public static final String[] descriptionArray = {"介绍太阳系内各天体", "随机抽取五道选择题", "太阳系行星公转情况"};
@@ -33,9 +39,12 @@ public class MainPageListCell {
 		this.description = description;
 	}
 
-	public static List<MainPageListCell> getDefaultList() {
+	public static List<MainPageListCell> getDefaultList(Context context) {
 		List<MainPageListCell> planetList = new ArrayList<>();
+		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+		boolean isEnabledEmulator = sharedPreferences.getBoolean("enable_planet_emulator",false);
 		for (int i = 0; i < nameArray.length; i++) {
+			if(i == 2 && !isEnabledEmulator) continue;
 			planetList.add(new MainPageListCell(nameArray[i], descriptionArray[i]));
 		}
 		return planetList;

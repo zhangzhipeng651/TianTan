@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_main);
 
 		//添加列表
-		List<MainPageListCell> list_cell = MainPageListCell.getDefaultList();
+		List<MainPageListCell> list_cell = MainPageListCell.getDefaultList(this);
 		MainPageListAdapter adapter = new MainPageListAdapter(this, list_cell);
 		lv = findViewById(R.id.listview);
 		lv.setAdapter(adapter);
