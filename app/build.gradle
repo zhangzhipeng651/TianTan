@@ -1,3 +1,21 @@
+/*
+ * TianTan (天探)
+ * Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学（原）高一（1）班天文小组)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 plugins {
     id 'com.android.application'
 }
@@ -10,7 +28,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 7
-        versionName "0.5.${versionCode}"
+        versionName "0.6.${versionCode}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,7 +49,7 @@ android {
         variant ->
             variant.outputs.all {
                 //outputFileName = "tiantan-${variant.name}-${variant.versionName}.apk"
-                outputFileName = "tiantan-beta-${variant.versionName}.apk"
+                outputFileName = "tiantan-alpha-${variant.versionName}.apk"
             }
     }
 
@@ -44,6 +62,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.preference:preference:1.1.1'
     implementation "androidx.cardview:cardview:1.0.0"
+
+    implementation 'com.google.code.gson:gson:2.9.0'
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

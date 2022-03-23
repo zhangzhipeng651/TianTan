@@ -1,6 +1,6 @@
 /*
  * TianTan (天探)
- * Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
+ * Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学（原）高一（1）班天文小组)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,8 +31,8 @@ public class MainPageListCell {
 	public String description;  //描述
 	//private Context mContext;
 
-	public static final String[] nameArray = {"天体介绍", "回答问题", "太阳系行星公转情况"};
-	public static final String[] descriptionArray = {"介绍太阳系内各天体", "随机抽取五道选择题", "太阳系行星公转情况"};
+	public static final String[] nameArray = {"天体介绍", "回答问题", "太阳系行星公转示意图"};
+	public static final String[] descriptionArray = {"介绍太阳系内各天体", "随机抽取五道选择题", "太阳系行星公转示意图"};
 
 	public MainPageListCell(String name, String description) {
 		this.name = name;

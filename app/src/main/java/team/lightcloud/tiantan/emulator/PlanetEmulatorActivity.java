@@ -1,6 +1,6 @@
 /*
  * TianTan (天探)
- * Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
+ * Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学（原）高一（1）班天文小组)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -151,6 +151,16 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 		seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+				/*
+				* 作者发现了一个bug:
+				* 作者在Android 5.0的模拟器上，将seekBar拖到最左边时，
+				* 出现了java.lang.ArithmeticException。
+				* 但在更高版本的真机和模拟器上并未发现此异常。
+				* 作者推测Android 5是否不支持SeekBar的android:min值?
+				* 特地加上下面一行代码来修复此bug。
+				*/
+				if(i == 0) i = 1;
+
 				sleepTime = 1000/i;
 			}
 
@@ -184,11 +194,12 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setCancelable(false);
 			builder.setTitle("使用此功能前须知");
-			builder.setMessage("本功能计算出的行星位置并不准确，欢迎大家来指正。" +
-					"\n本程序的计算原理是假定2149年12月6日发生了一次θ角为零的八星连珠（事实上，那天发生的八星连珠的θ角并不为零），然后根据日期差和我们组查出的数据，计算行星位置。" +
-					"\n日期与2149年12月6日相差越大，误差越大，且结果始终不可靠。" +
-					"\n本程序所作的太阳系图仅为示意图。" +
-					"\n本程序在某些情况下会卡死。" +
+			builder.setMessage("本功能不能精确表示行星位置。" +
+					//"\n本程序的计算原理是假定2149年12月6日发生了一次θ角为零的八星连珠（事实上，那天发生的八星连珠的θ角并不为零），然后根据日期差和我们组查出的数据，计算行星位置。" +
+					//"\n日期与2149年12月6日相差越大，误差越大，且结果始终不可靠。" +
+					//"\n本程序所作的太阳系图仅为示意图。" +
+					"\n\n本程序在某些情况下会卡死。" +
+					"\n如果您在调快速度时发现明显卡顿，请立即调慢速度。" +
 					"\n\n如果无法显示太阳系示意图，请尝试在手机设置的开发者选项中将“强制进行GPU渲染”关闭。");
 			builder.setNeutralButton(R.string.not_show_again, (l, m) -> {
 				SharedPreferences.Editor editor = shared.edit();

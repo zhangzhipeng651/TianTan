@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><!--
   ~ TianTan (天探)
-  ~ Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
+  ~ Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学（原）高一（1）班天文小组)
   ~
   ~ This program is free software: you can redistribute it and/or modify
   ~ it under the terms of the GNU General Public License as published by
@@ -43,6 +43,7 @@
     <string name="gplv3_description">天探是在GNU通用公共许可证（第3版）下发布的开源软件。</string>
     <string name="worker_description">资料搜集：黄翰庆、刘陈杰\n软件开发：张智鹏</string>
     <string name="testing_edition">测试版本</string>
+    <string name="using_3rd_party_library">使用的第三方库：\nGson 2.9.0 (Apache License 2.0 | https://github.com/google/gson)</string>
 
     <string-array name="version_description" translatable="false">
         <item>自测版本</item>
@@ -58,7 +59,7 @@
         <item>正式版本</item>
     </string-array>
 
-    <string name="open_source_link">开源链接：<br /><a href="https://github.com/zhangzhipeng651/TianTan">https://github.com/zhangzhipeng651/TianTan</a></string>
+    <string name="open_source_link">开源链接：https://github.com/zhangzhipeng651/TianTan</string>
 
     <string-array name="grades">
         <item>很不好</item>
@@ -72,7 +73,7 @@
     <string name="share">分享</string>
     <string name="return_">返回</string>
     <string name="exit">退出</string>
-    <string name="confirm_exit">您确定要退出吗？</string>
+    <string name="confirm_exit">您确定要退出么？</string>
     <string name="okay">确定</string>
     <string name="cancel">取消</string>
     <string name="submit">提交</string>
@@ -90,10 +91,19 @@
     <string name="interval">间隔</string>
     <string name="ms">毫秒</string>
     <string name="not_show_again">不再提示</string>
-    <string name="official_website">访问官网：<br /><a href="https://zhangzhipeng651.github.io/tiantan/">https://zhangzhipeng651.github.io/tiantan/</a></string>
+    <string name="official_website">访问官网：https://zhangzhipeng651.github.io/tiantan/</string>
+    <string name="download_page_url" translatable="false">https://github.com/zhangzhipeng651/TianTan/releases</string>
+    <string name="latest_version_json_url" translatable="false">https://zhangzhipeng651.github.io/tiantan/latest_version.json</string>
 
     <string name="check_for_updates">检查新版本</string>
     <string name="please_wait">请稍候</string>
+    <string name="found_new_version">发现新版本</string>
+    <string name="version_id">版本号：</string>
+    <string name="version_description">版本描述：</string>
+    <string name="open_link">打开链接</string>
+    <string name="no_newer_version">没有更新版本。</string>
+    <string name="check_internet_connection">无法连接网络。请检查您的网络连接。</string>
+    <string name="network_error">网络错误：</string>
 
     <string name="speed">速度</string>
     <string name="slow">慢</string>

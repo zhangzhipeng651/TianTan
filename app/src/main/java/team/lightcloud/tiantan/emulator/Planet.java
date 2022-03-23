@@ -1,6 +1,6 @@
 /*
  * TianTan (天探)
- * Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
+ * Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学（原）高一（1）班天文小组)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,7 +53,7 @@ public class Planet {
 			30666.14879d,
 			60148.8318d,
 	};
-	public static final double[] rList = {  //轨道半径，数据仅为作示意图之用，不是真正的轨道半径
+	public static final double[] rList = {  //轨道半径，没有按照真实比例，数据仅为作示意图之用
 			0.1d,
 			0.2d,
 			0.3d,
@@ -76,15 +76,15 @@ public class Planet {
 			0.015d,
 	};
 
-	public static final double[] phiList = {     //初相，数据仅为作示意图之用。参考了“Solar Walk Lite”软件中行星的位置。
-			0.00d,
-			0.00d,
-			0.00d,
-			Math.PI,
-			Math.PI,
-			0.00d,
-			Math.PI,
-			Math.PI,
+	public static final double[] phiList = {     //初相，数据仅为作示意图之用。参考了 heavens-above.com 中行星的位置。
+			0.00d + Math.PI * 0.25,     /* 水星 */
+			Math.PI * 0.25 + 0.55,   /* 金星 */
+			Math.PI * 0.25 + 0.5,   /* 地球 */
+			Math.PI * 1.1667 + 0.5618d,          /* 火星 */
+			Math.PI * 1.46d,            /* 木星 */
+			0.6d + Math.PI * 0.25, /* 土星 */
+			Math.PI + 0.79d,     /*天王星*/
+			Math.PI + 1.54d,     /*海王星*/
 	};
 
 	public static final int[] pColorList = {    //行星的颜色，必须加上"ff"的前缀，否则变为透明色

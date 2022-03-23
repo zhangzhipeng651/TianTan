@@ -1,6 +1,6 @@
 /*
  * TianTan (天探)
- * Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
+ * Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学（原）高一（1）班天文小组)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -64,7 +64,7 @@ public class ContestActivity extends AppCompatActivity {
 		button_next.setOnClickListener(l -> {
 			if (adapter.checkMissingSelections()) {
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
-				builder.setMessage("您有未做的题目，确定要提交吗？");
+				builder.setMessage("您有未做的题目，确定要提交么？");
 				builder.setPositiveButton(R.string.okay, (a, b) -> showResult());
 				builder.setNegativeButton(R.string.cancel, null);
 				builder.create().show();

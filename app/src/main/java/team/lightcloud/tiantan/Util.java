@@ -1,6 +1,6 @@
 /*
  * TianTan (天探)
- * Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学高一（1）班天文小组)
+ * Copyright (C) 2022  Astronomy Group, Class 1 Senior 1, Wujiang High School (吴江中学（原）高一（1）班天文小组)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@ public class Util {
 
 	private static boolean nIsDebugRelease = false;
 
-	public static final int releaseVersion = 2;
+	public static final int releaseVersion = 1;
 	//releaseVersion:发布版本，0为自测版本，1为内测版本，2为公测版本，3为正式版本
 	//自测版本：作者自行测试
 	//内测版本：组内成员使用，不建议转发到组外
