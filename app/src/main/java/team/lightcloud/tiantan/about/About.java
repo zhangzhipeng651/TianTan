@@ -27,10 +27,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -40,9 +38,7 @@ import com.google.gson.Gson;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Calendar;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -171,9 +167,9 @@ public class About extends AppCompatActivity {
 			pd.show();
 			t = new Thread(() -> {
 				Version v = getLatestVersion();
-				Log.d("NEW Version", v.versionName);
-				Log.d("NEW Version", String.valueOf(v.versionCode));
-				Log.d("NEW Version", v.versionDescription);
+				Log.d("NewVersionN: ", v.versionName);
+				Log.d("NewVersionC: ", String.valueOf(v.versionCode));
+				Log.d("NewVersionD: ", v.versionDescription);
 				Message m = new Message();
 				m.what = NEW_VERSION;
 				m.obj = v;

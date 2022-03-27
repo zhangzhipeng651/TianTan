@@ -55,7 +55,6 @@ public class QuestionsAdapter {
 		convertView.setTag(holder);
 
 		Question question = mqList.get(position);
-		//Log.w(null,mqList.toString());
 		holder.title.setText(question.getTitle());
 		ArrayList<String> sellist = question.getSelections();
 		for (String s : sellist) {
@@ -63,7 +62,6 @@ public class QuestionsAdapter {
 
 			radiobutton.setText(s);
 			holder.selGroup.addView(radiobutton);
-			//Log.w(null,"Add new list.");
 		}
 		mVHList.add(holder);
 		return convertView;

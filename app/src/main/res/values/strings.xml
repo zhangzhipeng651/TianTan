@@ -25,7 +25,7 @@
     <string name="title_activity_settings">设置</string>
 
     <!-- 主页选项 -->
-    <string-array name="mainpagelistcell_name">
+    <!--string-array name="mainpagelistcell_name">
         <item>天体介绍</item>
         <item>答题竞赛</item>
     </string-array>
@@ -33,7 +33,8 @@
     <string-array name="mainpagelistcell_description">
         <item>介绍太阳系内各天体</item>
         <item>随机抽取五道选择题，请认真作答</item>
-    </string-array>
+    </string-array-->
+
     <string name="name">名称</string>
     <string name="description">描述</string>
     <string name="notrealized">该功能尚未实现。</string>
@@ -76,6 +77,7 @@
     <string name="confirm_exit">您确定要退出么？</string>
     <string name="okay">确定</string>
     <string name="cancel">取消</string>
+    <string name="i_understand">我已理解</string>
     <string name="submit">提交</string>
     <string name="share_to">分享到</string>
     <string name="encounter_unknown_problem">抱歉，本软件遇到未知问题。</string>
@@ -95,6 +97,16 @@
     <string name="download_page_url" translatable="false">https://github.com/zhangzhipeng651/TianTan/releases</string>
     <string name="latest_version_json_url" translatable="false">https://zhangzhipeng651.github.io/tiantan/latest_version.json</string>
 
+    <string name="ask_if_user_not_finish_test">您有未做的题目，确定要提交么？</string>
+    <string name="answering_time_length">答题时长：</string>
+    <string name="score_detail">得分详情：</string>
+    <string name="question_detail_text1">第</string>
+    <string name="question_detail_text2">题：</string>
+    <string name="question_detail_text3">题目：</string>
+    <string name="question_detail_text4">正确选项：</string>
+    <string name="question_detail_text5">您选了：</string>
+    <string name="question_detail_text6">您未作答</string>
+
     <string name="check_for_updates">检查新版本</string>
     <string name="please_wait">请稍候</string>
     <string name="found_new_version">发现新版本</string>
@@ -105,7 +117,10 @@
     <string name="check_internet_connection">无法连接网络。请检查您的网络连接。</string>
     <string name="network_error">网络错误：</string>
 
+    <string name="pe_warn_title">使用此功能前须知</string>
+    <string name="pe_warn_text">本功能不能精确表示行星位置。\n\n本程序在某些情况下会卡死。\n\n如果您在调快速度时发现明显卡顿，请立即调慢速度。\n\n如果无法显示太阳系示意图，请尝试在手机设置的开发者选项中将“强制进行GPU渲染”关闭。</string>
     <string name="speed">速度</string>
     <string name="slow">慢</string>
     <string name="fast">快</string>
+
 </resources>

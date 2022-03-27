@@ -22,7 +22,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -64,7 +63,7 @@ public class ContestActivity extends AppCompatActivity {
 		button_next.setOnClickListener(l -> {
 			if (adapter.checkMissingSelections()) {
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
-				builder.setMessage("您有未做的题目，确定要提交么？");
+				builder.setMessage(R.string.ask_if_user_not_finish_test);
 				builder.setPositiveButton(R.string.okay, (a, b) -> showResult());
 				builder.setNegativeButton(R.string.cancel, null);
 				builder.create().show();

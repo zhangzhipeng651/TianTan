@@ -93,7 +93,7 @@ public class ScoreActivity extends AppCompatActivity {
 		long time_m = getIntent().getExtras().getLong("time");      //单位为毫秒
 		String timetext = Util.getProperTimeFormat(time_m);
 		TextView tv_time = findViewById(R.id.score_text_time);
-		tv_time.setText("答题时长：" + timetext);
+		tv_time.setText(getString(R.string.answering_time_length) + timetext);
 
 		String[] title = getIntent().getExtras().getStringArray("title");
 		String[] select = getIntent().getExtras().getStringArray("select");
@@ -102,22 +102,24 @@ public class ScoreActivity extends AppCompatActivity {
 		TextView tv = findViewById(R.id.score_text_detail);
 		int c = title.length;
 		StringBuilder sb = new StringBuilder();
-		sb.append("得分详情：\n\n");
+		sb.append(getString(R.string.score_detail));
+		sb.append("\n\n");
 		for (int i = 0; i < c; ++i) {
-			sb.append("第");
+			sb.append(getString(R.string.question_detail_text1));
 			sb.append((i + 1));
-			sb.append("题：\n");
-			sb.append("题目：");
+			sb.append(getString(R.string.question_detail_text2));
+			sb.append('\n');
+			sb.append(getString(R.string.question_detail_text3));
 			sb.append(title[i]);
 			sb.append("\n");
-			sb.append("正确选项：");
+			sb.append(getString(R.string.question_detail_text4));
 			sb.append(correct[i]);
 			sb.append("\n");
 			if (!select[i].equals("")) {
-				sb.append("您选了：");
+				sb.append(getString(R.string.question_detail_text5));
 				sb.append(select[i]);
 			} else {
-				sb.append("您未作答");
+				sb.append(getString(R.string.question_detail_text6));
 			}
 			sb.append("\n\n");
 		}

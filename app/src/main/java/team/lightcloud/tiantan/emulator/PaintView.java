@@ -38,16 +38,13 @@ public class PaintView extends View {
 		super(context);
 		if (context instanceof PlanetEmulatorActivity)
 			pea = (PlanetEmulatorActivity) context;
-//		Td t = new Td(this);
-//		t.start();
+
 	}
 
 	public PaintView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		if (context instanceof PlanetEmulatorActivity)
 			pea = (PlanetEmulatorActivity) context;
-//		Td t = new Td(this);
-//		t.start();
 	}
 
 	@Override
@@ -85,13 +82,11 @@ public class PaintView extends View {
 					planet.getTrackR() * mR * planet.getPositionYwithDeltaDays(pea.deltaDays) + centerPointY,
 					planet.getPlanetR() * mR);
 			canvas.drawOval(pr, mPaint);
-			//mPaint.setColor(0xffffffff);
 			canvas.drawText(planet.getName(),
 					pr.left - 5,
 					pr.top - pr.height(),
 					mPaint);
 		}
-		//canvas.drawText("从2149年12月6日开始的天数:" + pea.deltaDays,0,height-20,mPaint);
 	}
 
 	/**
@@ -115,25 +110,6 @@ public class PaintView extends View {
 		super.postInvalidate();
 	}
 
-//	class Td extends Thread{
-//		PaintView pv;
-//		public Td(PaintView mpv){
-//			pv=mpv;
-//		}
-//		@Override
-//		public void run(){
-//			while(true){
-//			try {
-//				Thread.sleep(5);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//			}
-//			if(pv.pea.isRunning)
-//				pv.pea.deltaDays
-//				pv.postInvalidate();
-//			}
-//		}
-//	}
 }
 
 
