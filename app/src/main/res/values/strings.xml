@@ -24,17 +24,6 @@
     <string name="author">作者</string>
     <string name="title_activity_settings">设置</string>
 
-    <!-- 主页选项 -->
-    <!--string-array name="mainpagelistcell_name">
-        <item>天体介绍</item>
-        <item>答题竞赛</item>
-    </string-array>
-
-    <string-array name="mainpagelistcell_description">
-        <item>介绍太阳系内各天体</item>
-        <item>随机抽取五道选择题，请认真作答</item>
-    </string-array-->
-
     <string name="name">名称</string>
     <string name="description">描述</string>
     <string name="notrealized">该功能尚未实现。</string>
@@ -46,7 +35,7 @@
     <string name="testing_edition">测试版本</string>
     <string name="using_3rd_party_library">使用的第三方库：\nGson 2.9.0 (Apache License 2.0 | https://github.com/google/gson)</string>
 
-    <string-array name="version_description" translatable="false">
+    <string-array name="version_description">
         <item>自测版本</item>
         <item>此版本为内测版本，不建议转发给组外人员。</item>
         <item>此版本为公测版本，不建议转发给班级外人员。</item>

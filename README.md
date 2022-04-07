@@ -43,7 +43,9 @@
 
 由于作者精力和水平有限，本软件难免存在一些疏漏之处。您可以帮助改进本软件。
 
-您可以在遵守协议的条件下，获取本软件的源代码并加以修改。
+您若有宝贵的意见或建议，欢迎在[issues](https://github.com/zhangzhipeng651/TianTan/issues)中提出。
+
+或者，您可以在遵守协议的条件下，获取本软件的源代码并加以修改。
 
 如果您想帮助改进本软件，您的计算机上应该配备以下环境：
 * 开发环境：最新版本的 IntelliJ IDEA ([点击此处下载](https://www.jetbrains.com/idea/download)) 
@@ -51,5 +53,5 @@
 * JDK 11 或更高版本
 
 ## 鸣谢
-* （原）高一（1）班吴同学（应他的要求，名字保密）为本软件题字。
+* （原）高一（1）班吴同学（现在在高一（2）班）（应他的要求，名字保密）为本软件题字。
 * 本 README.md 文档在编写过程中参考了 [HMCL 启动器源代码的 README.md](https://github.com/huanghongxun/HMCL/blob/javafx/README.md) 文档。向该文档的作者表示感谢！
