@@ -31,12 +31,14 @@
         <activity
             android:name=".emulator.PlanetEmulatorActivity"
             android:exported="false"
+            android:theme="@style/Theme.TianTanB"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:hardwareAccelerated="false" />
         <!--PlanetEmulatorActivity禁用硬件加速，因为这可能导致无法绘图-->
         <activity
             android:name=".IntroActivity"
             android:configChanges="orientation|screenSize"
+
             android:exported="false" />
         <activity
             android:name=".contest.ContestActivity"
@@ -52,6 +54,7 @@
         <activity
             android:name=".about.About"
             android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.TianTanB"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

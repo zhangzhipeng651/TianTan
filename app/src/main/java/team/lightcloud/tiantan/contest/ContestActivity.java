@@ -99,15 +99,15 @@ public class ContestActivity extends AppCompatActivity {
 		int id = item.getItemId();
 		switch (id) {
 			case android.R.id.home:
-				if (!Util.isDebugRelease()) {
-					AlertDialog.Builder builder = new AlertDialog.Builder(this);
-					builder.setMessage(getString(R.string.confirm_exit));
-					builder.setPositiveButton(R.string.okay, (dialog, which) -> finish());
-					builder.setNegativeButton(R.string.cancel, null);
-					builder.create().show();
-				} else {
+//				if (!Util.isDebugRelease()) {
+//					AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//					builder.setMessage(getString(R.string.confirm_exit));
+//					builder.setPositiveButton(R.string.okay, (dialog, which) -> finish());
+//					builder.setNegativeButton(R.string.cancel, null);
+//					builder.create().show();
+//				} else {
 					finish();
-				}
+//				}
 
 			default:
 				break;

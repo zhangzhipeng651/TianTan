@@ -34,13 +34,6 @@
     <RadioGroup
         android:id="@+id/contest_radiogroup"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"></RadioGroup>
+        android:layout_height="match_parent"/>
 
-    <!-- 分隔线 -->
-    <!--View
-        android:layout_height="1px"
-        android:layout_width="match_parent"
-        android:background="#66AAAAAA"
-        android:layout_marginBottom="0px"
-        /-->
 </LinearLayout>

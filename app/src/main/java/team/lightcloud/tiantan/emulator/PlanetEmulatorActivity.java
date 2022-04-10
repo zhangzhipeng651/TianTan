@@ -54,6 +54,10 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 	public PaintView paintView;
 	public Calendar calendar;
 
+	private EditText e_year;
+	private EditText e_month;
+	private EditText e_day;
+
 	public static final int REFRESH = 1;
 
 	Handler handler;
@@ -70,15 +74,16 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 			actionBar.setDisplayHomeAsUpEnabled(true);
 		}
 
-		EditText e_year = findViewById(R.id.emulator_input_year);
-		EditText e_month = findViewById(R.id.emulator_input_month);
-		EditText e_day = findViewById(R.id.emulator_input_day);
+		e_year = findViewById(R.id.emulator_input_year);
+		e_month = findViewById(R.id.emulator_input_month);
+		e_day = findViewById(R.id.emulator_input_day);
 
 		paintView = findViewById(R.id.emulator_paintview);
 		Button button_ok = findViewById(R.id.emulator_btn_ok);
 		Button button_start_pause = findViewById(R.id.emulator_btn_start_pause);
 		button_ok.setOnClickListener(l -> {
 			hideIM();
+			makeEditLoseFocus();
 			try {
 				int year = Integer.parseInt(e_year.getText().toString());
 				int month = Integer.parseInt(e_month.getText().toString()) - 1;
@@ -93,7 +98,9 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 
 		button_start_pause.setOnClickListener(l -> {
 			hideIM();
+			makeEditLoseFocus();
 			isRunning = !isRunning;
+			makeEditEnabled(!isRunning);
 			button_start_pause.setText(isRunning ? R.string.pause : R.string.start);
 		});
 
@@ -227,6 +234,18 @@ public class PlanetEmulatorActivity extends AppCompatActivity {
 		if (imm != null) {
 			imm.hideSoftInputFromWindow(this.getWindow().getDecorView().getWindowToken(), 0);
 		}
+	}
+
+	private void makeEditLoseFocus(){
+		e_day.clearFocus();
+		e_year.clearFocus();
+		e_month.clearFocus();
+	}
+
+	private void makeEditEnabled(boolean b){
+		e_day.setEnabled(b);
+		e_year.setEnabled(b);
+		e_month.setEnabled(b);
 	}
 
 

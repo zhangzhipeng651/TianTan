@@ -18,26 +18,43 @@
 
 package team.lightcloud.tiantan;
 
+import static android.view.KeyEvent.KEYCODE_BACK;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class IntroActivity extends AppCompatActivity {
+
+	private WebView webview;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_intro);
+		//getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
 		setTitle(MainPageListCell.nameArray[0]);
 		ActionBar actionBar = getSupportActionBar();
 		if (actionBar != null) {
 			actionBar.setHomeButtonEnabled(true);
 			actionBar.setDisplayHomeAsUpEnabled(true);
 		}
-		WebView webview = findViewById(R.id.intro_webview);
+		webview = findViewById(R.id.intro_webview);
+		//不能跳转到外部浏览器，因为外部浏览器无法访问应用内数据
+		webview.setWebViewClient(new WebViewClient(){
+			@Override
+			public boolean shouldOverrideUrlLoading(WebView view, String url) {
+				view.loadUrl(url);
+				return true;
+			}
+		});
+
 		webview.getSettings().setJavaScriptEnabled(true);
 		webview.loadUrl("file:///android_asset/index.html");
 	}
@@ -47,10 +64,27 @@ public class IntroActivity extends AppCompatActivity {
 		int id = item.getItemId();
 		switch (id) {
 			case android.R.id.home:
-				this.finish();
+				if(webview.canGoBack())
+					webview.goBack();
+				else
+					this.finish();
 			default:
 				break;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public boolean onKeyUp(int keyCode, KeyEvent event) {
+		if (keyCode == KEYCODE_BACK) {
+			if(webview.canGoBack()) {
+				webview.goBack();
+				return true;
+			}
+			else
+				this.finish();
+		}
+		return super.onKeyDown(keyCode, event);
+
 	}
 }
