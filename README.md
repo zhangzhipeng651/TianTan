@@ -11,6 +11,8 @@
 
 您可以点击本页旁边或下方的 [Releases](https://github.com/zhangzhipeng651/TianTan/releases) 选择最新版本并下载。
 
+**NOTE**:不要下载0.5.5及之前的版本，因为此前的版本中行星数据存在严重误差。
+
 **注意：目前，本软件仅在本 GitHub 源代码仓库页面和[官网](https://zhangzhipeng651.github.io/tiantan/)发布。** 请认准官网。
 
 
