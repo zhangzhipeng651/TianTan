@@ -16,13 +16,17 @@
   ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!--style name="AppCompatTheme" parent="@style/Theme.AppCompat.Light.NoActionBar" /-->
 
     <style name="AppTheme.StartingWindowTheme" parent="Theme.TianTan">
         <item name="android:windowBackground">@drawable/layer_launcher</item>
         <item name="android:windowFullscreen">true</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/purple_700</item>
+        <item name="android:windowSplashScreenIconBackgroundColor" tools:targetApi="s">@color/splash_bgcolor</item>
+        <!-- item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item -->
+        <!--item name="android:windowSplashScreenBrandingImage">@drawable/autograph_white_short</item-->
     </style>
 
 </resources>
