@@ -27,7 +27,7 @@ android {
         applicationId "team.lightcloud.tiantan"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 9
+        versionCode 10
         versionName "0.6.${versionCode}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

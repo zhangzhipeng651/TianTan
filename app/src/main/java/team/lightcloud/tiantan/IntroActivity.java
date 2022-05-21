@@ -20,6 +20,7 @@ package team.lightcloud.tiantan;
 
 import static android.view.KeyEvent.KEYCODE_BACK;
 
+import android.view.WindowManager;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -38,7 +39,7 @@ public class IntroActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_intro);
-		//getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 		setTitle(MainPageListCell.nameArray[0]);
 		ActionBar actionBar = getSupportActionBar();
 		if (actionBar != null) {

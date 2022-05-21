@@ -185,12 +185,12 @@
     </LinearLayout>
 
     <team.lightcloud.tiantan.emulator.PaintView
-        android:id="@+id/emulator_paintview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/emulator_control_ctner"
+            android:id="@+id/emulator_paintview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/emulator_control_ctner"
 
-        />
+    />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/emulator_sharebutton"
